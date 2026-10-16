@@ -274,7 +274,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @keyframes rise { from { transform: scaleY(0); } }
 
 /* Faixa de números */
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
 .stat { text-align: center; padding: 8px 12px; border-left: 1px solid rgba(255, 255, 255, .25); }
 .stat:first-child { border-left: 0; }
 .stat b { display: block; font-size: clamp(2.6rem, 5.4vw, 4.2rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; color: #fff; }
@@ -465,8 +465,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .trust__ico { display: none; }
   .hero__cta .btn { width: 100%; }
   .deliv { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: 1fr 1fr; gap: 32px 0; }
-  .stat:nth-child(3) { border-left: 0; }
+  .stat { padding: 8px 6px; }
+  .stat small { font-size: .68rem; letter-spacing: .05em; }
   .svc { grid-template-columns: 1fr; }
   .week { gap: 4px; }
   .day { padding: 10px 2px; min-height: 140px; border-radius: 9px; gap: 8px; }
@@ -643,7 +643,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
   <section class="section t-red" style="padding: clamp(56px, 7vw, 84px) 0">
     <div class="wrap stats">
       <div class="stat"><b data-count="57">0</b><small data-i18n="st.1">Pages rebuilt</small></div>
-      <div class="stat"><b data-count="208">0</b><small data-i18n="st.2">Projects synced from CompanyCam</small></div>
       <div class="stat"><b data-count="100">0</b><small data-i18n="st.3">Accessibility score</small></div>
       <div class="stat"><b data-count="3">0</b><small data-i18n="st.4">Offices on Google Maps</small></div>
     </div>
@@ -842,7 +841,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
       pt: { t: 'Gestão de SEO, GEO e AEO', d: 'Manutenção contínua do website e dos painéis, com revisão e otimização mensal da estratégia.', c: [['cal', 'Revisão mensal da estratégia']], i: ['Saúde técnica, atualizações e segurança', 'Otimizações de páginas e conteúdo', 'Visibilidade no Google e nas respostas de IA (ChatGPT, AI Overviews, Perplexity)', 'Suporte aos painéis para a equipe Nitro'] } },
     { ico: 'pin', en: { t: 'Google Business Profile Management', d: 'Monthly management and optimization of every location profile.', c: [['reply', 'Reviews: Mon · Wed · Fri'], ['clock', 'Profile update weekly'], ['camera', 'Geotagged photos + keywords monthly']], i: ['Review replies every Monday, Wednesday and Friday', 'Profile updates once a week', 'New geotagged images and keyword copy refresh once a month', 'Monitoring of calls, directions and views'] },
       pt: { t: 'Gestão do Google Meu Negócio', d: 'Gestão e otimização mensal do perfil de cada escritório.', c: [['reply', 'Avaliações: seg · qua · sex'], ['clock', 'Atualização semanal'], ['camera', 'Fotos geolocalizadas + keywords mensal']], i: ['Respostas às avaliações toda segunda, quarta e sexta', 'Atualizações no perfil 1x por semana', 'Novas imagens com geolocalização e textos com palavras-chave 1x por mês', 'Acompanhamento de ligações, rotas e visualizações'] } },
-    { ico: 'star', en: { t: 'Nextdoor & Yelp Management', d: 'Recurring care of Nitro\'s Nextdoor and Yelp pages.', c: [['camera', 'Photo updates'], ['reply', 'Review replies']], i: ['Recurring photo updates with recent projects', 'Replies to every new review on both platforms'] } },
     { ico: 'target', en: { t: 'Google Ads & LSA Management', d: 'Continuous management of Google Ads and Local Services Ads campaigns.', c: [['chart', 'Ongoing optimization']], i: ['Bids, budgets, keywords and negatives', 'LSA leads, disputes and profile health', 'Ad copy and landing page tests', 'Cost per lead tracked by campaign'] },
       pt: { t: 'Gestão de Google Ads e LSA', d: 'Gestão contínua das campanhas de Google Ads e Local Services Ads.', c: [['chart', 'Otimização contínua']], i: ['Lances, orçamentos, palavras-chave e negativas', 'Leads do LSA, contestações e saúde do perfil', 'Testes de anúncios e páginas de destino', 'Custo por lead acompanhado por campanha'] } },
     { ico: 'social', en: { t: 'Social Media & Meta Ads', d: 'Instagram & Facebook management plus Meta Ads campaigns.', c: [['image', '2 posts per week'], ['clock', 'Daily ads monitoring']], i: ['2 posts per week: static, dynamic or Reels', 'Captions, content planning, design and posting', 'Meta campaigns management with daily monitoring', 'Results reports for every campaign'] },
@@ -855,7 +853,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
         ['Connection to QuickBooks for marketing expense tracking'],
         ['KPI dashboard:', ['Total leads by location', 'Total leads by source (all sources, with data provided by Nitro)', 'Non-converted leads from Google and other sources (leads that were never entered into JobNimbus)', 'Total disputed leads', 'Cost per lead by source', 'Average cost per lead (blended average)', 'Cost per acquisition (total and per lead)', 'NSPL (net sales per lead)', 'Lead conversion (leads that get estimated)', 'Marketing budget vs. actual spend (by source and location)']],
         ['Ability to set marketing spend by lead source and/or location in the dashboard']] } } },
-    { ico: 'image', fee: '20% of the final order value', en: { t: 'Merch & Print Materials', d: 'Hats, shirts, merch, yard signs and business cards designed, ordered and coordinated for Nitro.', c: [['edit', 'Design'], ['inbox', 'Ordering & coordination'], ['doc', '20% of final order']], i: ['Hats, shirts and branded merch', 'Yard signs and business cards', 'Design of every piece, aligned with Nitro\'s brand', 'Ordering with suppliers and coordination through delivery', 'Billed at 20% of the final order value, outside the monthly flat fee'] } }
+    { ico: 'image', fee: '20% of the final order value', en: { t: 'Merch & Print Materials', d: 'Hats, shirts, merch, yard signs and business cards designed, ordered and coordinated for Nitro.', c: [['edit', 'Design'], ['inbox', 'Ordering & coordination'], ['doc', '20% of final order']], i: ['Hats, shirts and branded merch', 'Yard signs and business cards', 'Design of every piece, aligned with Nitro\'s brand', 'Ordering with suppliers and coordination through delivery', 'Billed at 20% of the final order value, outside the monthly flat fee'] } },
+    { ico: 'star', en: { t: 'Nextdoor & Yelp Management', d: 'Recurring care of Nitro\'s Nextdoor and Yelp pages.', c: [['camera', 'Photo updates'], ['reply', 'Review replies']], i: ['Recurring photo updates with recent projects', 'Replies to every new review on both platforms'] } }
   ]
   const PRICE = { p1: '$7,800', p2: '$5,800' }
 
