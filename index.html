@@ -224,6 +224,66 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .ring small { font-size: .82rem; font-weight: 700; color: var(--ink); line-height: 1.3; }
 .ring small span { display: block; font-weight: 500; color: var(--muted); }
 
+/* React x WordPress */
+.stack { margin-top: clamp(56px, 7vw, 88px); }
+.stack__grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(24px, 4vw, 48px); align-items: start; }
+.about { position: relative; background: var(--dark); color: #c9ced8; border-radius: 14px; padding: clamp(24px, 3vw, 34px); box-shadow: var(--shadow-lg); overflow: hidden; }
+.about::before { content: ''; position: absolute; left: 0; top: 0; width: 120px; height: 4px; background: var(--red); }
+.about__ico { width: 56px; height: 56px; border-radius: 14px; display: grid; place-items: center; background: rgba(97, 218, 251, .12); color: #61dafb; margin-bottom: 18px; }
+.about__ico svg { width: 32px; height: 32px; }
+.about h3 { color: #fff; margin-bottom: .5em; }
+.about p { font-size: .98rem; }
+.about ul { display: grid; gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, .1); }
+.about li { display: flex; gap: 10px; font-size: .92rem; line-height: 1.45; color: #e5e8ee; }
+.about li svg { width: 18px; height: 18px; color: var(--red-soft); flex: none; margin-top: 2px; }
+.cmp { background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+.cmp table { width: 100%; border-collapse: collapse; font-size: .92rem; line-height: 1.45; }
+.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+.cmp tr:last-child td { border-bottom: 0; }
+.cmp thead th { font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--gray); }
+.cmp thead th.is-new { background: var(--dark); color: #fff; }
+.cmp tbody th { font-weight: 700; color: var(--ink); width: 24%; }
+.cmp td { color: var(--muted); width: 38%; }
+.cmp td.is-new { color: var(--ink); font-weight: 600; background: #fffafa; border-left: 3px solid var(--red); }
+.perf { margin-top: 28px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: clamp(20px, 3vw, 32px); }
+.perf__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
+.perf__top h3 { margin: 0 0 4px; }
+.perf__top p { margin: 0; font-size: .92rem; color: var(--muted); }
+.perf .shots__switch { margin: 0; }
+.perf__key { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .8rem; font-weight: 700; color: var(--ink); margin-bottom: 16px; }
+.perf__key span { display: inline-flex; align-items: center; gap: 8px; }
+.perf__key i { width: 12px; height: 12px; border-radius: 3px; background: #b8bec9; }
+.perf__key i.is-new { background: var(--red); }
+.pgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.pcat { border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.pcat h4 { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.pbar { display: grid; grid-template-columns: 1fr 44px; gap: 10px; align-items: center; margin-top: 10px; }
+.pbar small { grid-column: 1 / -1; font-size: .74rem; font-weight: 700; color: var(--muted); margin-bottom: -6px; }
+.pbar i { height: 10px; border-radius: 999px; background: #eef0f3; overflow: hidden; display: block; }
+.pbar i::before { content: ''; display: block; height: 100%; width: var(--w); background: var(--c); border-radius: inherit; transition: width .8s cubic-bezier(.2, .7, .2, 1); }
+.pbar b { font-size: 1.15rem; font-weight: 800; color: var(--c); text-align: right; line-height: 1; }
+.pbar em { font-style: normal; font-size: .68rem; font-weight: 700; color: var(--muted); grid-column: 1 / -1; margin-top: -4px; }
+.pmet { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+.pmet div { background: var(--gray); border-radius: 10px; padding: 12px 14px; }
+.pmet small { display: block; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.pmet p { margin: 6px 0 0; font-size: .9rem; color: var(--muted); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.pmet p s { text-decoration-color: rgba(107, 114, 128, .6); }
+.pmet p b { font-size: 1.15rem; color: var(--ink); }
+.perf__note { font-size: .78rem; color: var(--muted); margin: 16px 0 0; }
+
+/* Datas de início */
+.starts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(40px, 5vw, 56px); }
+.start { display: flex; gap: 16px; align-items: center; padding: 18px 20px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); }
+.start__d { flex: none; width: 64px; height: 64px; border-radius: 12px; background: var(--red); color: #fff; display: grid; place-items: center; text-align: center; line-height: 1; font-weight: 800; }
+.start__d small { display: block; font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.start__d b { font-size: 1.6rem; }
+.start h3 { font-size: 1.05rem; margin: 0 0 2px; }
+.start p { margin: 0; font-size: .9rem; color: #aab1be; }
+.sum__dates { display: grid; gap: 8px; margin: -8px 0 22px; }
+.sum__dates li { display: flex; gap: 10px; align-items: center; font-size: .86rem; color: #e5e8ee; }
+.sum__dates li svg { width: 16px; height: 16px; color: var(--red-soft); flex: none; }
+.sum__dates b { color: #fff; }
+
 /* Painel admin (mock) */
 .admin { margin-top: clamp(56px, 7vw, 88px); }
 .admin__frame { background: #f3f4f6; border-radius: 14px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); overflow: hidden; }
@@ -435,6 +495,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .tabs { grid-template-columns: 300px 1fr; }
   .svc { grid-template-columns: 1fr 1fr; }
   .ad-g4 { grid-template-columns: 1fr 1fr; }
+  .pgrid, .pmet { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
   .hero__grid, .site__grid, .nos, .rhythm, .builder { grid-template-columns: 1fr; }
@@ -453,6 +514,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .shots { margin-bottom: 8%; }
   .ad-g2 { grid-template-columns: 1fr; }
   .appmock { order: -1; }
+  .stack__grid { grid-template-columns: 1fr; }
+  .starts { grid-template-columns: 1fr; }
   .appmock__phone { width: min(250px, 66%); }
 }
 @media (max-width: 640px) {
@@ -486,6 +549,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .ad-row > :nth-child(n+3) { display: none; }
   .bar { grid-template-columns: 92px 1fr 34px; }
   .cta__btns .btn { width: 100%; }
+  .cmp { overflow-x: auto; }
+  .cmp table { min-width: 540px; }
+  .pgrid { grid-template-columns: 1fr; }
   .scores { gap: 14px 22px; }
 }
 </style>
@@ -624,6 +690,57 @@ button { font: inherit; color: inherit; cursor: pointer; }
         </div>
       </div>
 
+      <div class="stack">
+        <div class="head head--center rv">
+          <p class="eyebrow">Why React</p>
+          <h2>A Modern Stack <span class="hl">Instead of WordPress</span></h2>
+          <p class="lead muted">The current site runs on WordPress. The new one is built on a modern React-based stack that is faster, safer and easier to grow.</p>
+        </div>
+        <div class="stack__grid">
+          <div class="about rv">
+            <span class="about__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="1.8" fill="currentColor"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg></span>
+            <h3>What is React?</h3>
+            <p>React is the open-source technology created by Meta to build fast, modern websites and apps. It powers products like Facebook, Instagram, Netflix and Airbnb.</p>
+            <p style="margin:0">On Nitro's new site, the admin panel is built with React (Next.js + Payload CMS) and every page is pre-built as lightweight HTML. Visitors get pages that load almost instantly, and Google and AI search read them easily.</p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>No plugin pile to update or break</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Forms, SEO and lead tracking built in</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg>Easy for the team to edit, without a developer</li>
+            </ul>
+          </div>
+          <div class="cmp rv" style="--d:120ms">
+            <table>
+              <thead><tr><th scope="col"></th><th scope="col">WordPress · current site</th><th scope="col" class="is-new">React · new site</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">How pages load</th><td>Built on every visit by the server and database</td><td class="is-new">Pre-built pages served instantly from a global CDN</td></tr>
+                <tr><th scope="row">Speed</th><td>Slowed down by themes, page builders and plugins</td><td class="is-new">Lightweight pages with almost no extra code</td></tr>
+                <tr><th scope="row">Security</th><td>Common target; core, theme and plugins need constant patching</td><td class="is-new">No public database or plugins on the live site</td></tr>
+                <tr><th scope="row">SEO &amp; AI search</th><td>Depends on extra plugins and settings</td><td class="is-new">Schema, sitemap, clean URLs and llms.txt built in</td></tr>
+                <tr><th scope="row">Leads</th><td>Forms and tracking spread across separate tools</td><td class="is-new">Every lead with source, UTMs, pages visited and CSV export</td></tr>
+                <tr><th scope="row">Maintenance</th><td>Plugin updates and conflicts can break pages</td><td class="is-new">Fewer moving parts, simpler to keep healthy</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="perf rv">
+          <div class="perf__top">
+            <div>
+              <h3>Performance Scores: Today vs. the New Site</h3>
+              <p>Google Lighthouse scores, from 0 to 100. Higher is better.</p>
+            </div>
+            <div class="shots__switch" role="group" aria-label="Device" id="perfSwitch">
+              <button type="button" aria-pressed="true" data-dev="mobile">Mobile</button>
+              <button type="button" aria-pressed="false" data-dev="desktop">Desktop</button>
+            </div>
+          </div>
+          <div class="perf__key"><span><i></i>Current · WordPress (nitroroofing.com)</span><span><i class="is-new"></i>Forecast · React (new site)</span></div>
+          <div class="pgrid" id="perfGrid"></div>
+          <div class="pmet" id="perfMet"></div>
+          <p class="perf__note">Measured with Google Lighthouse on October 21, 2026. The React forecast uses the new site in its preview environment. Its SEO score is expected to reach 100 at launch: the preview is hidden from Google on purpose, which is the only SEO item it misses today. Scores vary slightly between runs.</p>
+        </div>
+      </div>
+
       <div class="admin">
         <div class="head head--center rv">
           <p class="eyebrow" data-i18n="adm.eyebrow">Editing &amp; tracking panels</p>
@@ -717,6 +834,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
         <h2 data-i18n="rd.title">From Kickoff <span class="hl">to Monthly Growth</span></h2>
       </div>
       <div class="road" id="road"></div>
+      <div class="starts">
+        <div class="start rv"><span class="start__d"><span><small>Nov</small><b>1</b></span></span><div><h3>NOS app development starts</h3><p>November 1, 2026 · first month of the plan</p></div></div>
+        <div class="start rv" style="--d:120ms"><span class="start__d"><span><small>Dec</small><b>1</b></span></span><div><h3>Marketing Phase 1 starts</h3><p>December 1, 2026 · website, profiles and reviews</p></div></div>
+      </div>
     </div>
   </section>
 
@@ -735,6 +856,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
           <p class="muted" style="margin:0" data-i18n="pl.sub">Services included</p>
           <div class="sum__count"><b id="sumN">13</b><span id="sumOf">services</span></div>
           <div class="prices" id="prices"></div>
+          <ul class="sum__dates" id="sumDates"></ul>
           <ul class="sum__list" id="sumList"></ul>
           <button type="button" class="btn btn--red" id="copyPlan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg><span data-i18n="pl.copy">Copy plan summary</span></button>
           <p class="sum__note" data-i18n="pl.note">All values in USD. Reach out to your Melanie's Business Consulting contact to schedule the kickoff.</p>
@@ -822,10 +944,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
         o: 'Um plano claro e priorizado para gerar mais leads com o mesmo orçamento (ou menor).' } },
     { ico: 'social', status: 'plan',
       en: { t: 'Social Media Review', s: 'Active pages · Action plan', d: 'A review of Nitro\'s active social pages with concrete actions to improve consistency, trust and engagement.',
-        i: ['Profile completeness, bios, links and branding', 'Content audit: frequency, formats and engagement', 'Benchmark against local competitors', 'Content pillars and visual direction', 'Prioritized list of improvements'],
+        i: ['<b>Profile Optimization:</b> Complete and refine bios, links, and branding to create a consistent, professional presence.', '<b>Strategic Content Planning:</b> Develop content aligned with business goals and organize it into a strategic content calendar.', '<b>Profile Photo &amp; Contact Details:</b> Upgrade profile pictures with high-quality portraits and ensure contact information is complete and up to date.', '<b>Content Management &amp; Approval:</b> Use Notion as a central hub to organize, review, and approve content and designs before publishing.'],
         o: 'Social pages that look as professional as Nitro\'s work and are ready for monthly content.' },
       pt: { t: 'Revisão das Redes Sociais', s: 'Páginas ativas · Plano de ação', d: 'Uma revisão das páginas sociais ativas da Nitro com ações concretas para melhorar consistência, confiança e engajamento.',
-        i: ['Perfis completos: bio, links e identidade visual', 'Auditoria de conteúdo: frequência, formatos e engajamento', 'Comparativo com concorrentes locais', 'Pilares de conteúdo e direção visual', 'Lista priorizada de melhorias'],
+        i: ['<b>Otimização dos perfis:</b> completar e refinar bios, links e identidade visual para uma presença consistente e profissional.', '<b>Planejamento estratégico de conteúdo:</b> desenvolver conteúdo alinhado aos objetivos do negócio e organizá-lo em um calendário estratégico.', '<b>Foto de perfil e contatos:</b> trocar as fotos de perfil por retratos de alta qualidade e garantir que os dados de contato estejam completos e atualizados.', '<b>Gestão e aprovação de conteúdo:</b> usar o Notion como central para organizar, revisar e aprovar conteúdos e artes antes da publicação.'],
         o: 'Redes sociais tão profissionais quanto o trabalho da Nitro e prontas para o conteúdo mensal.' } },
     { ico: 'star', status: 'plan',
       en: { t: 'Nextdoor & Yelp', s: 'Page restructuring · Reputation', d: 'Homeowners check Nextdoor and Yelp before calling. We restructure both pages so they look as professional and trustworthy as Nitro\'s work.',
@@ -843,8 +965,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
       pt: { t: 'Gestão do Google Meu Negócio', d: 'Gestão e otimização mensal do perfil de cada escritório.', c: [['reply', 'Avaliações: seg · qua · sex'], ['clock', 'Atualização semanal'], ['camera', 'Fotos geolocalizadas + keywords mensal']], i: ['Respostas às avaliações toda segunda, quarta e sexta', 'Atualizações no perfil 1x por semana', 'Novas imagens com geolocalização e textos com palavras-chave 1x por mês', 'Acompanhamento de ligações, rotas e visualizações'] } },
     { ico: 'target', en: { t: 'Google Ads & LSA Management', d: 'Continuous management of Google Ads and Local Services Ads campaigns.', c: [['chart', 'Ongoing optimization']], i: ['Bids, budgets, keywords and negatives', 'LSA leads, disputes and profile health', 'Ad copy and landing page tests', 'Cost per lead tracked by campaign'] },
       pt: { t: 'Gestão de Google Ads e LSA', d: 'Gestão contínua das campanhas de Google Ads e Local Services Ads.', c: [['chart', 'Otimização contínua']], i: ['Lances, orçamentos, palavras-chave e negativas', 'Leads do LSA, contestações e saúde do perfil', 'Testes de anúncios e páginas de destino', 'Custo por lead acompanhado por campanha'] } },
-    { ico: 'social', en: { t: 'Social Media & Meta Ads', d: 'Instagram & Facebook management plus Meta Ads campaigns.', c: [['image', '2 posts per week'], ['clock', 'Daily ads monitoring']], i: ['2 posts per week: static, dynamic or Reels', 'Captions, content planning, design and posting', 'Meta campaigns management with daily monitoring', 'Results reports for every campaign'] },
-      pt: { t: 'Redes Sociais e Meta Ads', d: 'Gestão de Instagram e Facebook e das campanhas de Meta Ads.', c: [['image', '2 posts por semana'], ['clock', 'Acompanhamento diário']], i: ['2 posts semanais: estáticos, dinâmicos ou Reels', 'Legendas, planejamento de conteúdo, design e publicação', 'Gestão das campanhas Meta com acompanhamento diário', 'Relatórios de resultados de cada campanha'] } },
+    { ico: 'social', en: { t: 'Social Media & Meta Ads', d: 'Instagram & Facebook management plus Meta Ads campaigns.', c: [['image', '5 posts per week'], ['clock', 'Daily ads monitoring']], i: ['5 posts per week: static, dynamic or Reels', 'Captions, content planning, design and posting', 'Meta campaigns management with daily monitoring', 'Results reports for every campaign'] },
+      pt: { t: 'Redes Sociais e Meta Ads', d: 'Gestão de Instagram e Facebook e das campanhas de Meta Ads.', c: [['image', '5 posts por semana'], ['clock', 'Acompanhamento diário']], i: ['5 posts semanais: estáticos, dinâmicos ou Reels', 'Legendas, planejamento de conteúdo, design e publicação', 'Gestão das campanhas Meta com acompanhamento diário', 'Relatórios de resultados de cada campanha'] } },
     { ico: 'chart', en: { t: 'Search Console & Analytics Reports', d: 'One monthly report with the data that matters and clear suggestions for improvement.', c: [['doc', 'Monthly report']], i: ['Google Search Console: queries, rankings and indexing', 'Google Analytics + site panel: traffic, sources and conversions', 'Leads by channel and city', 'Recommended actions for the next month'] },
       pt: { t: 'Relatórios de Search Console e Analytics', d: 'Um relatório mensal com os dados que importam e sugestões claras de melhoria.', c: [['doc', 'Relatório mensal']], i: ['Google Search Console: buscas, posições e indexação', 'Google Analytics + painel do site: tráfego, origens e conversões', 'Leads por canal e por cidade', 'Ações recomendadas para o mês seguinte'] } },
     { ico: 'app', en: { t: 'NOS App Development', d: 'Finishing the Nitro Operating System, the company app, in planned phases.', c: [['flag', 'Phased delivery'], ['chart', 'Live marketing KPIs']], i: ['Review of the current build and priorities', 'Phase-by-phase scope, delivery and validation', 'Team rollout and training', 'Integrations with the website and lead data'],
@@ -856,7 +978,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
     { ico: 'image', fee: '20% of the final order value', en: { t: 'Merch & Print Materials', d: 'Hats, shirts, merch, yard signs and business cards designed, ordered and coordinated for Nitro.', c: [['edit', 'Design'], ['inbox', 'Ordering & coordination'], ['doc', '20% of final order']], i: ['Hats, shirts and branded merch', 'Yard signs and business cards', 'Design of every piece, aligned with Nitro\'s brand', 'Ordering with suppliers and coordination through delivery', 'Billed at 20% of the final order value, outside the monthly flat fee'] } },
     { ico: 'star', en: { t: 'Nextdoor & Yelp Management', d: 'Recurring care of Nitro\'s Nextdoor and Yelp pages.', c: [['camera', 'Photo updates'], ['reply', 'Review replies']], i: ['Recurring photo updates with recent projects', 'Replies to every new review on both platforms'] } }
   ]
-  const PRICE = { p1: '$7,800', p2: '$5,800' }
+  const PRICE = { p1: '$9,000', p2: '$5,800' }
+  const STARTS = [['Nov 1, 2026', 'NOS app development starts'], ['Dec 1, 2026', 'Marketing Phase 1 starts']]
 
   const ACT = {
     rev: { ico: 'reply', en: ['Google review replies', 'Every review answered, all offices'], pt: ['Respostas às avaliações do Google', 'Todas as avaliações respondidas, todos os escritórios'] },
@@ -865,7 +988,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
     meta: { ico: 'chart', en: ['Meta Ads monitoring', 'Daily check of spend, leads and creatives'], pt: ['Acompanhamento do Meta Ads', 'Checagem diária de gasto, leads e criativos'] },
     ads: { ico: 'target', en: ['Google Ads & LSA check', 'Search terms, budgets and LSA leads'], pt: ['Checagem de Google Ads e LSA', 'Termos de pesquisa, orçamentos e leads do LSA'] }
   }
-  const WEEK = [['rev', 'meta', 'ads'], ['post', 'meta'], ['rev', 'meta', 'ads'], ['gbp', 'post', 'meta'], ['rev', 'meta', 'ads'], ['meta'], ['meta']]
+  const WEEK = [['rev', 'post', 'meta', 'ads'], ['post', 'meta'], ['rev', 'post', 'meta', 'ads'], ['gbp', 'post', 'meta'], ['rev', 'post', 'meta', 'ads'], ['meta'], ['meta']]
   const DAYS = { en: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'], pt: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'] }
   const DAYS_L = { en: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'], pt: ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo'] }
   const MONTHLY = {
@@ -891,11 +1014,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
     en: [['search', 'Built for SEO, GEO & AEO', 'Schema, FAQs and llms.txt so Google and AI assistants understand and cite Nitro.'], ['edit', 'Edit everything yourself', 'Texts, images, services, projects, reviews and settings in a simple admin.'], ['inbox', 'Leads with full history', 'Source, campaign, pages visited and status of every lead, with CSV export.']],
     pt: [['search', 'Feito para SEO, GEO e AEO', 'Schema, FAQs e llms.txt para o Google e as IAs entenderem e citarem a Nitro.'], ['edit', 'Edite tudo sozinho', 'Textos, imagens, serviços, projetos, avaliações e configurações em um admin simples.'], ['inbox', 'Leads com histórico completo', 'Origem, campanha, páginas visitadas e status de cada lead, com exportação em CSV.'], ['camera', 'Galeria do CompanyCam', '208 projetos reais com fotos e filtros por tipo e produtos usados.']]
   }
-  const SCORES = { en: [[94, '94–99', 'Performance', 'Lighthouse'], [100, '100', 'Accessibility', 'Lighthouse'], [100, '100', 'Best Practices', 'Lighthouse']], pt: [[94, '94–99', 'Desempenho', 'Lighthouse'], [100, '100', 'Acessibilidade', 'Lighthouse'], [100, '100', 'Boas práticas', 'Lighthouse']] }
+  const SCORES = { en: [[92, '92–100', 'Performance', 'Lighthouse'], [100, '100', 'Accessibility', 'Lighthouse'], [100, '100', 'Best Practices', 'Lighthouse']], pt: [[92, '92–100', 'Desempenho', 'Lighthouse'], [100, '100', 'Acessibilidade', 'Lighthouse'], [100, '100', 'Boas práticas', 'Lighthouse']] }
   const SHOT_URLS = ['nitroroofing.com', 'nitroroofing.com/projects/', 'nitroroofing.com/services/residential/roof-replacement/']
 
   const UI = {
-    en: { built: 'Built · ready to launch', plan: 'Delivered in Phase 1', incl: 'What\'s included', out: 'Outcome', live: 'Open the live preview', details: 'Details', p1: 'Phase 1 · Initial project', p2: 'Phase 2 · Monthly management', p1Price: 'Initial project', p1Note: 'Phase 1 · one-time', p2Price: 'Monthly payment', p2Note: 'Flat fee (no investment fee)', mo: '/mo', feeLabel: 'Merch & print materials', copied: 'Plan summary copied', week: 'This day', tasks: 'tasks', planTitle: 'Nitro Roofing — Digital Growth Proposal' },
+    en: { built: 'Built · ready to launch', plan: 'Delivered in Phase 1', incl: 'What\'s included', out: 'Outcome', live: 'Open the live preview', details: 'Details', p1: 'Phase 1 · Initial project', p2: 'Phase 2 · Monthly management', p1Price: 'Initial project', p1Note: 'Phase 1 · first month, one-time', p2Price: 'Monthly payment', p2Note: 'Flat fee (no investment fee)', mo: '/mo', feeLabel: 'Merch & print materials', copied: 'Plan summary copied', week: 'This day', tasks: 'tasks', planTitle: 'Nitro Roofing — Digital Growth Proposal' },
     pt: { built: 'Pronto · aguardando lançamento', plan: 'Entregue na Fase 1', incl: 'O que está incluído', out: 'Resultado', live: 'Abrir o preview ao vivo', details: 'Detalhes', of: 'de', p1: 'Fase 1 · Base', p2: 'Fase 2 · Mensal', all: 'Marcar todos', none: 'Limpar', copied: 'Seleção copiada', week: 'Neste dia', tasks: 'tarefas', plan: 'Nitro Roofing — serviços selecionados' }
   }
 
@@ -951,6 +1074,23 @@ button { font: inherit; color: inherit; cursor: pointer; }
     $$('#shotView img').forEach((im, j) => im.classList.toggle('is-on', j === k))
     $('#shotUrl').textContent = SHOT_URLS[k]
   }))
+
+  // ---------- Desempenho: WordPress atual x React (Lighthouse, 21/10/2026) ----------
+  const PERF = {
+    mobile: { s: [['Performance', 33, 92], ['Accessibility', 83, 100], ['Best Practices', 61, 100], ['SEO', 85, 100, 'expected at launch']],
+      m: [['Largest paint', '5.6 s', '2.1 s'], ['Blocking time', '2,180 ms', '220 ms'], ['Layout shift', '0.133', '0'], ['Speed Index', '9.1 s', '4.9 s']] },
+    desktop: { s: [['Performance', 67, 100], ['Accessibility', 87, 100], ['Best Practices', 59, 100], ['SEO', 85, 100, 'expected at launch']],
+      m: [['Largest paint', '1.6 s', '0.5 s'], ['Blocking time', '420 ms', '0 ms'], ['Layout shift', '0.014', '0'], ['Speed Index', '3.0 s', '0.8 s']] }
+  }
+  const scoreColor = v => v >= 90 ? '#0c9d4a' : v >= 50 ? '#d97706' : '#dc2626'
+  function renderPerf(dev) {
+    const d = PERF[dev]
+    $$('#perfSwitch button').forEach(b => b.setAttribute('aria-pressed', b.dataset.dev === dev))
+    const bar = (label, v, note) => `<div class="pbar" style="--w:${v}%;--c:${scoreColor(v)}"><small>${label}</small><i></i><b>${v}</b>${note ? `<em>${note}</em>` : ''}</div>`
+    $('#perfGrid').innerHTML = d.s.map(([t, wp, re, note]) => `<div class="pcat"><h4>${t}</h4>${bar('WordPress', wp)}${bar('React', re, note)}</div>`).join('')
+    $('#perfMet').innerHTML = d.m.map(([t, wp, re]) => `<div><small>${t}</small><p><s>${wp}</s><b>${re}</b></p></div>`).join('')
+  }
+  $$('#perfSwitch button').forEach(b => b.addEventListener('click', () => renderPerf(b.dataset.dev)))
 
   // ---------- Painel admin (mock interativo) ----------
   const ADM = {
@@ -1056,23 +1196,25 @@ button { font: inherit; color: inherit; cursor: pointer; }
     const u = UI[L]
     const opt = p => `<label class="opt"><input type="checkbox" checked disabled><span class="opt__box">${svg('check', 3)}</span><span>${p[L].t}${p.fee ? `<small class="opt__fee">${p.fee}</small>` : ''}</span></label>`
     const grp = (list, title, price) => `<div class="bgroup"><h3>${title}<span class="bprice">${price}</span></h3><div class="opts">${list.map(opt).join('')}</div></div>`
-    $('#groups').innerHTML = grp(P1, u.p1, `${PRICE.p1}<small>one-time</small>`) + grp(P2, u.p2, `${PRICE.p2}<small>${u.mo}</small>`)
+    $('#groups').innerHTML = grp(P1, u.p1, `${PRICE.p1}<small>first month</small>`) + grp(P2, u.p2, `${PRICE.p2}<small>${u.mo}</small>`)
     $('#sumN').textContent = P1.length + P2.length
     $('#prices').innerHTML = `<div class="price"><span>${u.p1Price}<small>${u.p1Note}</small></span><b>${PRICE.p1}</b></div>
       <div class="price"><span>${u.p2Price}<small>${u.p2Note}</small></span><b>${PRICE.p2}<small>${u.mo}</small></b></div>
       <div class="price price--alt"><span>${u.feeLabel}<small>Design, ordering &amp; coordination</small></span><b>20%<small>of order</small></b></div>`
+    $('#sumDates').innerHTML = STARTS.map(([d, t]) => `<li>${svg('cal')}<span><b>${d}</b> · ${t}</span></li>`).join('')
     const part = (list, title) => `<li class="sep">${title}</li>` + list.map(p => `<li>${svg('check', 2.6)}<span>${p[L].t}</span></li>`).join('')
     $('#sumList').innerHTML = part(P1, u.p1) + part(P2, u.p2)
   }
   $('#copyPlan').addEventListener('click', async () => {
     const u = UI[L]
     const lines = [u.planTitle, '']
-    ;[[P1, `${u.p1} — ${PRICE.p1} (one-time)`], [P2, `${u.p2} — ${PRICE.p2}${u.mo} · ${u.p2Note}`]].forEach(([list, title]) => {
+    ;[[P1, `${u.p1} — ${PRICE.p1} (first month, one-time)`], [P2, `${u.p2} — ${PRICE.p2}${u.mo} · ${u.p2Note}`]].forEach(([list, title]) => {
       lines.push(title)
       list.forEach(p => lines.push('• ' + p[L].t + (p.fee ? ` (${p.fee})` : '')))
       lines.push('')
     })
     if (FEE) lines.push(`${u.feeLabel}: ${FEE.fee}, billed separately from the monthly fee.`)
+    lines.push('', ...STARTS.map(([d, t]) => `${d}: ${t}`))
     const txt = lines.join('\n').trim()
     try { await navigator.clipboard.writeText(txt) } catch (e) {
       const ta = document.createElement('textarea'); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy') } catch (_) {} ta.remove()
@@ -1081,7 +1223,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   })
 
   function renderAll() {
-    renderOverview(); renderP1(false); renderSite(); renderAdmin(); renderP2(); renderWeek(); renderNos(); renderRoad(); renderPlan()
+    renderOverview(); renderP1(false); renderSite(); renderPerf('mobile'); renderAdmin(); renderP2(); renderWeek(); renderNos(); renderRoad(); renderPlan()
   }
 
   // ---------- Revelação, contadores, progresso, nav ativa ----------
