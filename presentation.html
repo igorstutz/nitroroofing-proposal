@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Nitro Growth Presentation</title>
+<meta name="description" content="Interactive presentation of the digital growth proposal prepared by Melanie's Business Consulting for Nitro Roofing & Construction.">
+<meta name="theme-color" content="#0e1116">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #dc1c24;
+  --red-700: #b8161d;
+  --red-soft: #ff4d53;
+  --red-tint: #fdecec;
+  --ink: #111827;
+  --text: #374151;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --gray: #f5f5f6;
+  --dark: #0e1116;
+  --dark-2: #171a21;
+  --dark-3: #232733;
+  --d-text: #c9ced8;
+  --d-muted: #aab1be;
+  --d-line: rgba(255, 255, 255, .1);
+  --shadow: 0 10px 30px rgba(17, 24, 39, .07);
+  --shadow-lg: 0 24px 60px rgba(17, 24, 39, .16);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: #07090c; font-family: var(--font); color: var(--text); -webkit-font-smoothing: antialiased; overflow: hidden; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 2px; }
+p, h1, h2, h3, h4, ul, dl, dd { margin: 0; }
+ul { padding: 0; list-style: none; }
+
+/* ---------- Palco 16:9 escalado ---------- */
+.viewport { position: fixed; inset: 0 0 var(--cueh, 0px) 0; }
+.stage { position: absolute; left: 50%; top: 50%; width: 1600px; height: 900px; transform: translate(-50%, -50%) scale(var(--s, 1)); overflow: hidden; background: var(--dark); box-shadow: 0 30px 120px rgba(0, 0, 0, .6); font-size: 20px; line-height: 1.5; }
+.progress { position: absolute; left: 0; top: 0; height: 4px; width: 100%; background: var(--red); transform-origin: 0 50%; transform: scaleX(0); transition: transform .5s var(--ease); z-index: 5; }
+
+.slide { position: absolute; inset: 0; padding: 52px 88px 60px; display: flex; flex-direction: column; opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s; }
+.slide.is-on { opacity: 1; visibility: visible; }
+.slide.l { background-color: var(--gray); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='92' viewBox='0 0 160 92'%3E%3Cpath d='M0 80 40 40 80 80 120 40 160 80' fill='none' stroke='%23fff' stroke-width='22'/%3E%3C/svg%3E"); color: var(--text); }
+.slide.d { background-color: var(--dark); background-image: radial-gradient(1100px 520px at 88% -12%, rgba(220, 28, 36, .24), transparent 60%), url('assets/dark-texture-1920.webp'); background-size: auto, cover; color: var(--d-text); }
+
+/* Animação de entrada escalonada */
+.slide.is-on .a { animation: up .7s var(--ease) backwards; animation-delay: calc(var(--i, 0) * 80ms + 120ms); }
+@keyframes up { from { opacity: 0; transform: translateY(22px); } }
+.static .a { animation: none !important; }
+.static, .static * { transition: none !important; }
+
+/* Cabeçalho do slide */
+.sh { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 48px; margin-bottom: 30px; }
+.sh .logo { height: 44px; width: auto; flex: none; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+.eyebrow::before { content: ''; width: 22px; height: 12px; background: currentColor; clip-path: polygon(50% 0, 100% 100%, 70% 100%, 50% 45%, 30% 100%, 0 100%); flex: none; }
+.d .eyebrow { color: var(--red-soft); }
+.brands { display: flex; align-items: center; gap: 18px; }
+.brands img { height: 44px; width: auto; }
+.brands .mc { height: 70px; }
+.brands span { color: #5b6270; font-size: 22px; }
+
+.title { font-size: 62px; font-weight: 800; line-height: 1.06; letter-spacing: -.03em; color: var(--ink); max-width: 1180px; }
+.d .title { color: #fff; }
+.title--sm { font-size: 46px; }
+.title--xl { font-size: 92px; line-height: 1; }
+.hl { display: block; color: var(--red); }
+.d .hl { color: var(--red-soft); }
+.lead { margin-top: 18px; font-size: 24px; line-height: 1.5; color: var(--muted); max-width: 1180px; }
+.d .lead { color: var(--d-muted); }
+.body { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; margin-top: 30px; }
+.fine { margin-top: 14px; padding-right: 150px; font-size: 15px; line-height: 1.4; color: #8a909b; }
+.d .fine { color: #7d8493; }
+.pg { position: absolute; right: 88px; bottom: 24px; font-size: 15px; font-weight: 700; letter-spacing: .06em; color: #9aa1ad; font-variant-numeric: tabular-nums; }
+.d .pg { color: #6b7280; }
+
+/* Layout dividido: texto à esquerda, visual à direita */
+.split { flex: 1; min-height: 0; display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+.split > *, .cover__grid > * { min-width: 0; }
+.split__copy { display: flex; flex-direction: column; }
+.split__copy .lead { font-size: 20px; margin-top: 12px; }
+
+/* ---------- Pontos (grade 2×2 clicável) ---------- */
+.pts { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.pt { position: relative; display: flex; gap: 20px; align-items: flex-start; text-align: left; width: 100%; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; box-shadow: var(--shadow); overflow: hidden; transition: opacity .3s, filter .3s, transform .3s var(--ease), box-shadow .3s; }
+.pt::before { content: ''; position: absolute; left: 0; top: 0; width: 38%; height: 4px; background: var(--red); transition: width .4s var(--ease); }
+.pt:hover::before, .pt.is-focus::before { width: 100%; }
+.pt__ico { width: 56px; height: 56px; border-radius: 14px; flex: none; display: grid; place-items: center; background: var(--dark); color: #fff; }
+.pt__ico svg { width: 26px; height: 26px; }
+.pt h3 { font-size: 25px; font-weight: 800; line-height: 1.2; letter-spacing: -.015em; color: var(--ink); margin-bottom: 8px; }
+.pt h3 small { display: block; font-size: 14px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+.pt p { font-size: 19px; line-height: 1.5; color: var(--muted); }
+.pts.has-focus .pt:not(.is-focus) { opacity: .32; filter: grayscale(1); }
+.pt.is-focus { transform: scale(1.025); box-shadow: var(--shadow-lg); z-index: 1; }
+.d .pt { background: rgba(255, 255, 255, .04); border-color: var(--d-line); box-shadow: none; }
+.d .pt__ico { background: rgba(220, 28, 36, .16); color: var(--red-soft); }
+.d .pt h3 { color: #fff; }
+.d .pt h3 small { color: var(--red-soft); }
+.d .pt p { color: var(--d-muted); }
+.d .pt.is-focus { background: rgba(255, 255, 255, .08); }
+
+/* Lista compacta (usada nos slides divididos) */
+.pts--list { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+.pts--list .pt { padding: 13px 18px; gap: 16px; border-radius: 12px; align-items: center; }
+.pts--list .pt::before { width: 4px; height: 100%; }
+.pts--list .pt:hover::before, .pts--list .pt.is-focus::before { width: 4px; }
+.pts--list .pt__ico { width: 44px; height: 44px; border-radius: 11px; }
+.pts--list .pt__ico svg { width: 21px; height: 21px; }
+.pts--list .pt h3 { font-size: 20px; margin-bottom: 2px; }
+.pts--list .pt p { font-size: 16.5px; line-height: 1.4; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tag { display: inline-flex; align-items: center; gap: 7px; font-size: 15px; font-weight: 700; padding: 7px 12px; border-radius: 999px; background: var(--red-tint); color: var(--red-700); line-height: 1.2; }
+.tag svg { width: 15px; height: 15px; }
+.d .tag { background: rgba(220, 28, 36, .16); color: #ff8a8e; }
+
+/* Faixa de destaque */
+.strip { display: flex; align-items: center; gap: 22px; margin-top: 22px; padding: 20px 26px; background: #fff; border: 1px solid var(--line); border-left: 5px solid var(--red); border-radius: 12px; box-shadow: var(--shadow); }
+.strip b { flex: none; font-size: 14px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+.strip p { font-size: 20px; color: var(--ink); font-weight: 600; }
+.strip .tags { margin: 0; }
+.d .strip { background: rgba(255, 255, 255, .05); border-color: var(--d-line); border-left-color: var(--red); box-shadow: none; }
+.d .strip p { color: #fff; }
+.d .strip b { color: var(--red-soft); }
+
+/* ---------- Capa ---------- */
+.cover::after { content: ''; position: absolute; inset: 0; background: url('assets/house.webp') right center / cover no-repeat; opacity: .09; mix-blend-mode: luminosity; pointer-events: none; }
+.cover > *:not(.pg) { position: relative; z-index: 1; }
+.cover__grid { flex: 1; display: grid; grid-template-columns: 1fr .95fr; gap: 56px; align-items: center; }
+.cover__copy { border-left: 4px solid var(--red); padding-left: 36px; }
+.cover .lead { font-size: 27px; color: #d3d8e1; max-width: 640px; margin-top: 24px; }
+.meta { display: grid; gap: 0; margin-top: 40px; max-width: 640px; }
+.meta div { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 13px 0; border-top: 1px solid var(--d-line); font-size: 20px; }
+.meta dt { font-size: 14px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red-soft); padding-top: 4px; }
+.meta dd { color: #fff; font-weight: 600; }
+
+.devices { position: relative; padding: 0 0 9% 9%; }
+.laptop__screen { background: #1c2029; border-radius: 16px 16px 4px 4px; padding: 10px; box-shadow: 0 30px 80px rgba(0, 0, 0, .55), inset 0 0 0 1px rgba(255, 255, 255, .08); }
+.laptop__screen img { border-radius: 6px; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; width: 100%; }
+.laptop__base { height: 16px; margin: 0 -5%; background: linear-gradient(#3a3f4b, #20242c); border-radius: 0 0 16px 16px; position: relative; }
+.laptop__base::before { content: ''; position: absolute; left: 50%; top: 0; width: 18%; height: 5px; transform: translateX(-50%); background: #14171d; border-radius: 0 0 6px 6px; }
+.phone { position: absolute; left: 0; bottom: 0; width: 27%; background: #0b0d11; padding: 7px; border-radius: 30px; box-shadow: 0 24px 60px rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .12); }
+.phone img { border-radius: 24px; aspect-ratio: 390 / 844; object-fit: cover; object-position: top; width: 100%; }
+.float { animation: float 7s ease-in-out infinite; }
+.float--slow { animation-duration: 9s; animation-delay: -2s; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+/* ---------- Visão geral: 3 cartões ---------- */
+.pcs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.pc { position: relative; display: flex; flex-direction: column; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 36px 34px 34px; box-shadow: var(--shadow); overflow: hidden; text-align: left; transition: transform .3s var(--ease), box-shadow .3s; }
+.pc::before { content: ''; position: absolute; left: 0; top: 0; width: 38%; height: 5px; background: var(--red); transition: width .4s var(--ease); }
+.pc:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.pc:hover::before { width: 100%; }
+.pc--dark { background: var(--dark); border-color: var(--dark); }
+.pc__n { display: block; font-size: 128px; font-weight: 800; line-height: .82; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 2.4px var(--red); margin-bottom: 26px; }
+.pc--dark .pc__n { -webkit-text-stroke-color: var(--red-soft); }
+.pc__tag { display: inline-block; font-size: 14px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--red-tint); color: var(--red); margin-bottom: 14px; }
+.pc--dark .pc__tag { background: rgba(220, 28, 36, .2); color: var(--red-soft); }
+.pc h3 { font-size: 30px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; color: var(--ink); margin-bottom: 10px; }
+.pc--dark h3 { color: #fff; }
+.pc p { font-size: 20px; color: var(--muted); }
+.pc--dark p { color: var(--d-muted); }
+.pc__go { position: absolute; right: 30px; top: 36px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--line); color: var(--ink); transition: background .2s, color .2s, border-color .2s; }
+.pc--dark .pc__go { border-color: var(--d-line); color: #fff; }
+.pc:hover .pc__go { background: var(--red); border-color: var(--red); color: #fff; }
+.pc__go svg { width: 20px; height: 20px; }
+
+/* ---------- Jornada / roteiro ---------- */
+.road { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; position: relative; }
+.road::before { content: ''; position: absolute; left: 44px; right: 8%; top: 43px; height: 2px; background: repeating-linear-gradient(90deg, #cfd3da 0 10px, transparent 10px 20px); }
+.d .road::before { background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .25) 0 10px, transparent 10px 20px); }
+.rs { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; background: none; border: 0; padding: 0; }
+.rs__dot { width: 88px; height: 88px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 2px solid var(--line); color: var(--ink); position: relative; z-index: 1; margin-bottom: 28px; transition: background .45s, border-color .45s, color .45s, box-shadow .45s; }
+.d .rs__dot { background: var(--dark-3); border-color: rgba(255, 255, 255, .14); color: #fff; }
+.rs__dot svg { width: 34px; height: 34px; }
+.rs.is-in .rs__dot { background: var(--red); border-color: var(--red); color: #fff; box-shadow: 0 0 0 10px rgba(220, 28, 36, .16); }
+.rs small { display: block; font-size: 14px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+.d .rs small { color: var(--red-soft); }
+.rs h3 { font-size: 28px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; color: var(--ink); margin-bottom: 10px; }
+.d .rs h3 { color: #fff; }
+.rs p { font-size: 19px; color: var(--muted); line-height: 1.5; transition: color .3s; }
+.d .rs p { color: var(--d-muted); }
+
+/* Governança (dois lados) */
+.gov { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 44px; }
+.gov div { display: flex; gap: 18px; align-items: center; padding: 20px 24px; border-radius: 14px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); }
+.gov div.gov--n { background: var(--dark); border-color: var(--dark); }
+.gov i { font-style: normal; flex: none; width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; background: var(--red-tint); color: var(--red); }
+.gov--n i { background: rgba(220, 28, 36, .2); color: var(--red-soft); }
+.gov svg { width: 24px; height: 24px; }
+.gov b { display: block; font-size: 14px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--red); }
+.gov--n b { color: var(--red-soft); }
+.gov p { font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+.gov--n p { color: #fff; }
+
+/* ---------- Blocos navegáveis (Fase 1 e Fase 2) ---------- */
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.tile { position: relative; display: flex; flex-direction: column; text-align: left; background: rgba(255, 255, 255, .04); border: 1px solid var(--d-line); border-radius: 16px; padding: 32px 32px 30px; overflow: hidden; transition: background .3s, transform .3s var(--ease), border-color .3s; }
+.tile::before { content: ''; position: absolute; left: 0; top: 0; width: 38%; height: 4px; background: var(--red); transition: width .4s var(--ease); }
+button.tile:hover { background: rgba(255, 255, 255, .08); transform: translateY(-6px); border-color: rgba(255, 255, 255, .2); }
+button.tile:hover::before { width: 100%; }
+.tile__n { font-size: 74px; font-weight: 800; line-height: .9; letter-spacing: -.03em; color: transparent; -webkit-text-stroke: 1.8px var(--red-soft); }
+.tile h3 { font-size: 29px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; color: #fff; margin: 22px 0 10px; }
+.tile p { font-size: 19px; color: var(--d-muted); }
+.tile__go { position: absolute; right: 26px; top: 30px; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; border: 1.5px solid var(--d-line); color: #fff; transition: background .2s, border-color .2s; }
+button.tile:hover .tile__go { background: var(--red); border-color: var(--red); }
+.tile__go svg { width: 20px; height: 20px; }
+.gos { display: grid; gap: 8px; margin-top: 20px; }
+.go { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 12px 14px; border-radius: 10px; background: rgba(255, 255, 255, .04); border: 1px solid var(--d-line); color: #e5e8ee; font-size: 18px; font-weight: 600; line-height: 1.3; transition: background .2s, border-color .2s, transform .2s; }
+.go b { flex: none; font-size: 15px; font-weight: 800; color: var(--red-soft); min-width: 26px; }
+.go svg { width: 18px; height: 18px; margin-left: auto; flex: none; color: #6b7280; transition: color .2s, transform .2s; }
+.go:hover { background: rgba(220, 28, 36, .14); border-color: rgba(220, 28, 36, .5); transform: translateX(4px); }
+.go:hover svg { color: #fff; }
+.tile--grp { padding: 28px 26px 24px; }
+.tile--grp h3 { margin: 0 0 4px; font-size: 26px; }
+.tile__cnt { font-size: 15px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--red-soft); }
+
+/* ---------- Navegador + celular (site) ---------- */
+.shots { position: relative; padding-bottom: 8%; }
+.switch { display: inline-flex; gap: 4px; padding: 5px; border-radius: 999px; background: #fff; box-shadow: var(--shadow); border: 1px solid var(--line); margin-bottom: 18px; }
+.switch button { border: 0; background: transparent; font-size: 16px; font-weight: 700; padding: 9px 18px; border-radius: 999px; color: var(--muted); transition: background .2s, color .2s; }
+.switch button[aria-pressed='true'] { background: var(--dark); color: #fff; }
+.browser { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--line); }
+.browser__bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #f1f2f4; border-bottom: 1px solid var(--line); }
+.browser__bar i { width: 12px; height: 12px; border-radius: 50%; background: #d7d9de; }
+.browser__bar i:first-child { background: #ff5f57; } .browser__bar i:nth-child(2) { background: #febc2e; } .browser__bar i:nth-child(3) { background: #28c840; }
+.browser__url { flex: 1; margin-left: 10px; font-size: 14px; color: var(--muted); background: #fff; border-radius: 7px; padding: 6px 14px; }
+.browser__view { position: relative; aspect-ratio: 16 / 10; background: var(--dark); }
+.browser__view img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0; transition: opacity .5s; }
+.browser__view img.is-on { opacity: 1; }
+.shots .phone { left: auto; right: -2%; bottom: 0; width: 23%; }
+.badges { position: absolute; left: -26px; bottom: 6%; display: grid; gap: 10px; z-index: 2; }
+.badge { display: flex; align-items: center; gap: 14px; background: var(--dark); color: #fff; border-radius: 12px; padding: 12px 18px 12px 14px; box-shadow: var(--shadow-lg); }
+.badge b { font-size: 34px; font-weight: 800; letter-spacing: -.03em; line-height: 1; color: #fff; }
+.badge span { font-size: 14px; font-weight: 700; line-height: 1.25; color: var(--d-muted); max-width: 120px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 22px; border-radius: 6px; border: 2px solid transparent; font-weight: 800; font-size: 15px; letter-spacing: .05em; text-transform: uppercase; text-decoration: none; transition: background .2s, transform .2s; }
+.btn svg { width: 18px; height: 18px; }
+.btn--red { background: var(--red); color: #fff; box-shadow: 0 10px 24px rgba(220, 28, 36, .28); }
+.btn--red:hover { background: var(--red-700); transform: translateY(-2px); }
+.btn--ghost { border-color: rgba(255, 255, 255, .3); color: #fff; }
+.btn--ghost:hover { border-color: #fff; transform: translateY(-2px); }
+.shots .btn { position: absolute; right: 0; top: 0; }
+
+/* ---------- Painel administrativo (mock) ---------- */
+.adm { background: #f3f4f6; border-radius: 16px; box-shadow: var(--shadow-lg); border: 1px solid var(--line); overflow: hidden; }
+.adm__tabs { display: flex; gap: 4px; padding: 10px; background: var(--dark); }
+.adm__tabs button { display: inline-flex; align-items: center; gap: 8px; border: 0; background: transparent; color: var(--d-muted); font-size: 16px; font-weight: 700; padding: 10px 16px; border-radius: 8px; transition: background .2s, color .2s; }
+.adm__tabs button svg { width: 17px; height: 17px; }
+.adm__tabs button[aria-selected='true'] { background: var(--red); color: #fff; }
+.adm__tabs span { margin-left: auto; align-self: center; padding-right: 8px; font-size: 13px; color: #6b7280; }
+.adm__body { padding: 16px; height: 440px; }
+.card { background: #fff; border: 1px solid #e8e9ed; border-radius: 12px; padding: 16px 18px; }
+.lbl { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.row { display: grid; grid-template-columns: 1.45fr 1fr .95fr; gap: 8px; align-items: center; width: 100%; text-align: left; padding: 9px 10px; border: 0; background: transparent; border-radius: 8px; font-size: 15px; color: var(--ink); transition: background .2s; }
+.row:hover, .row.is-on { background: #fdf2f2; }
+.row small { display: block; color: var(--muted); font-size: 13px; }
+.row--h { font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 0; }
+.row--h:hover { background: transparent; }
+.chip { display: inline-flex; align-items: center; justify-self: start; font-size: 12.5px; font-weight: 700; padding: 4px 9px; border-radius: 999px; background: #eef0f3; color: var(--ink); white-space: nowrap; }
+.chip--g { background: #e8f0fe; color: #1a56c4; }
+.chip--l { background: #e9f8ef; color: #12773d; }
+.chip--o { background: #fef3c7; color: #92400e; }
+.chip--m { background: #eef0ff; color: #4338ca; }
+.adm__split { display: grid; grid-template-columns: 1.55fr 1fr; gap: 12px; height: 100%; }
+.adm__split > * { min-width: 0; }
+.journey { position: relative; padding-left: 24px; margin-top: 6px; }
+.journey::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 10px; width: 2px; background: #f2c9cb; }
+.journey li { position: relative; padding: 0 0 14px; font-size: 15px; color: var(--ink); line-height: 1.35; animation: up .4s var(--ease) both; animation-delay: calc(var(--k) * 70ms); }
+.journey li::before { content: ''; position: absolute; left: -23px; top: 3px; width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 3px solid var(--red); }
+.journey li small { display: block; color: var(--muted); font-size: 13px; }
+.field { border: 1px solid #e3e5ea; border-radius: 8px; padding: 10px 12px; font-size: 16px; color: var(--ink); background: #fff; margin-bottom: 12px; }
+.field.is-edit { border-color: var(--red); box-shadow: 0 0 0 3px rgba(220, 28, 36, .12); }
+.field.is-edit::after { content: ''; display: inline-block; width: 2px; height: 1.05em; background: var(--red); margin-left: 2px; vertical-align: text-bottom; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.adm__img { aspect-ratio: 16 / 9; border-radius: 10px; background: url('assets/house.webp') center / cover; position: relative; }
+.adm__img span { position: absolute; left: 10px; bottom: 10px; background: rgba(14, 17, 22, .82); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 10px; border-radius: 6px; }
+.mini-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--red); color: #fff; font-size: 14px; font-weight: 800; padding: 9px 14px; border-radius: 8px; }
+.mini-btn--g { background: #fff; color: var(--ink); border: 1px solid #e3e5ea; }
+.mini-btn svg { width: 15px; height: 15px; }
+.mock-note { font-size: 13px; color: var(--muted); text-align: right; margin-top: 10px; }
+
+/* ---------- SEO / GEO / AEO ---------- */
+.sx { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.sx__card { display: flex; flex-direction: column; text-align: left; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; transition: opacity .3s, filter .3s, transform .3s var(--ease), box-shadow .3s; }
+.sx__mock { height: 172px; padding: 20px; background: #f3f4f6; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.sx__txt { padding: 18px 24px 22px; }
+.sx__txt h3 { font-size: 25px; font-weight: 800; color: var(--ink); line-height: 1.2; margin-bottom: 8px; }
+.sx__txt h3 small { display: block; font-size: 14px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--red); margin-bottom: 6px; }
+.sx__txt p { font-size: 18px; color: var(--muted); }
+.sx.has-focus .sx__card:not(.is-focus) { opacity: .32; filter: grayscale(1); }
+.sx__card.is-focus { transform: scale(1.025); box-shadow: var(--shadow-lg); }
+.q { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #dfe1e5; border-radius: 999px; padding: 9px 16px; font-size: 15px; color: var(--ink); }
+.q svg { width: 16px; height: 16px; color: #9aa1ad; }
+.serp { background: #fff; border-radius: 10px; padding: 12px 14px; border: 1px solid #e8e9ed; }
+.serp small { display: block; font-size: 12px; color: #4d5156; }
+.serp b { display: block; font-size: 15px; color: #1a0dab; font-weight: 600; margin: 2px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.serp span { display: block; font-size: 13px; color: #4d5156; line-height: 1.4; }
+.ai { display: flex; gap: 10px; align-items: flex-start; }
+.ai i { font-style: normal; flex: none; width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; background: var(--dark); color: #fff; }
+.ai i svg { width: 16px; height: 16px; }
+.ai p { background: #fff; border: 1px solid #e8e9ed; border-radius: 4px 12px 12px 12px; padding: 10px 12px; font-size: 14px; line-height: 1.45; color: var(--ink); }
+.ai p em { font-style: normal; display: inline-block; margin-top: 6px; font-size: 12px; font-weight: 700; color: var(--red-700); background: var(--red-tint); padding: 2px 8px; border-radius: 999px; }
+.faq { background: #fff; border: 1px solid #e8e9ed; border-radius: 10px; overflow: hidden; }
+.faq div { padding: 10px 14px; font-size: 14px; color: var(--ink); font-weight: 700; display: flex; justify-content: space-between; gap: 10px; }
+.faq div + div { border-top: 1px solid #eef0f3; }
+.faq div span { color: var(--red); }
+.faq p { padding: 0 14px 10px; font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+/* ---------- Perfil do Google (mock) ---------- */
+.gbp { background: #fff; border-radius: 16px; border: 1px solid var(--line); box-shadow: var(--shadow-lg); overflow: hidden; }
+.gbp__tabs { display: flex; gap: 6px; padding: 14px 16px; background: var(--dark); }
+.gbp__tabs button { border: 0; background: rgba(255, 255, 255, .06); color: var(--d-muted); font-size: 15px; font-weight: 700; padding: 9px 16px; border-radius: 999px; display: inline-flex; gap: 7px; align-items: center; transition: background .2s, color .2s; }
+.gbp__tabs button svg { width: 15px; height: 15px; }
+.gbp__tabs button[aria-pressed='true'] { background: var(--red); color: #fff; }
+.gbp__map { height: 150px; position: relative; background-color: #e9eef2; background-image: linear-gradient(90deg, rgba(255, 255, 255, .9) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, .9) 2px, transparent 2px), linear-gradient(35deg, transparent 46%, #fff 46%, #fff 54%, transparent 54%); background-size: 70px 70px, 70px 70px, 100% 100%; }
+.gbp__map .pin { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -80%); color: var(--red); filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .2)); animation: drop .5s var(--ease); }
+.gbp__map .pin svg { width: 46px; height: 46px; fill: var(--red); stroke: #fff; }
+@keyframes drop { from { transform: translate(-50%, -160%); opacity: 0; } }
+.gbp__in { padding: 20px 24px 22px; }
+.gbp__in h4 { font-size: 24px; font-weight: 800; color: var(--ink); }
+.gbp__in > p { font-size: 16px; color: var(--muted); margin-top: 2px; }
+.gbp__acts { display: flex; gap: 10px; margin: 16px 0; }
+.gbp__acts span { flex: 1; display: grid; justify-items: center; gap: 6px; padding: 10px 6px; border-radius: 12px; border: 1px solid var(--line); font-size: 14px; font-weight: 700; color: #1a56c4; }
+.gbp__acts svg { width: 20px; height: 20px; }
+.gbp__chk { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.gbp__chk li { display: flex; gap: 8px; align-items: center; font-size: 15px; color: var(--ink); }
+.gbp__chk svg { width: 17px; height: 17px; color: #0c9d4a; flex: none; }
+
+/* ---------- Integrações (NOS) ---------- */
+.flow { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 30px; }
+.node { display: flex; align-items: center; gap: 12px; padding: 14px 22px; border-radius: 12px; background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow); font-size: 20px; font-weight: 800; color: var(--ink); }
+.node small { display: block; font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: .02em; }
+.node i { font-style: normal; width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; background: var(--red-tint); color: var(--red); }
+.node i svg { width: 21px; height: 21px; }
+.node--c { background: var(--dark); border-color: var(--dark); color: #fff; padding: 16px 28px; }
+.node--c i { background: var(--red); color: #fff; }
+.node--c small { color: var(--d-muted); }
+.wire { width: 120px; height: 2px; position: relative; background: repeating-linear-gradient(90deg, var(--red) 0 8px, transparent 8px 14px); background-size: 28px 2px; animation: wire 1s linear infinite; }
+.wire--r { animation-direction: reverse; }
+@keyframes wire { to { background-position: 28px 0; } }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.kpis .pt { flex-direction: column; gap: 14px; padding: 24px; }
+.kpis .pt h3 { font-size: 22px; }
+.kpis .tags { margin-top: 0; }
+.kpis .tag { font-size: 14px; }
+
+/* ---------- NOS: etapas ---------- */
+.stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; position: relative; }
+.stg { position: relative; display: flex; flex-direction: column; align-items: flex-start; text-align: left; background: #fff; border: 1.5px solid var(--line); border-radius: 16px; padding: 28px 26px; box-shadow: var(--shadow); transition: border-color .3s, transform .3s var(--ease), box-shadow .3s, background .3s; }
+.stg__n { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.stg__n b { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-size: 20px; font-weight: 800; background: #fff; border: 3px solid #d7dae0; color: var(--muted); transition: background .3s, border-color .3s, color .3s; }
+.stg__n span { font-size: 13px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.stg h3 { font-size: 24px; font-weight: 800; color: var(--ink); line-height: 1.2; margin-bottom: 8px; }
+.stg p { font-size: 18px; color: var(--muted); }
+.stg.is-done .stg__n b { background: var(--ink); border-color: var(--ink); color: #fff; }
+.stg.is-done .stg__n span { color: var(--ink); }
+.stg.is-cur { border-color: var(--red); transform: translateY(-8px); box-shadow: 0 18px 44px rgba(220, 28, 36, .16); }
+.stg.is-cur .stg__n b { background: var(--red); border-color: var(--red); color: #fff; box-shadow: 0 0 0 7px rgba(220, 28, 36, .15); }
+.stg.is-cur .stg__n span { color: var(--red); }
+.track { height: 8px; border-radius: 999px; background: #e3e6eb; margin-top: 34px; overflow: hidden; }
+.track i { display: block; height: 100%; width: var(--w, 25%); background: linear-gradient(90deg, var(--red-700), var(--red)); border-radius: inherit; transition: width .6s var(--ease); }
+.track__lbl { display: flex; justify-content: space-between; margin-top: 10px; font-size: 15px; font-weight: 700; color: var(--muted); }
+
+/* ---------- Marca e avaliações ---------- */
+.trio { display: grid; grid-template-columns: 1fr .82fr 1fr; gap: 24px; align-items: stretch; }
+.trio .pt { flex-direction: column; gap: 16px; padding: 32px 30px; }
+.fee { justify-content: center; text-align: center; align-items: center; background: var(--dark) !important; border-color: var(--dark) !important; }
+.fee .big { font-size: 112px; font-weight: 800; line-height: .9; letter-spacing: -.04em; color: #fff; }
+.fee h3 { color: #fff !important; }
+.fee p { color: var(--d-muted) !important; }
+.fee::before { width: 100% !important; }
+
+/* ---------- Semana ---------- */
+.rhythm { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: start; }
+.week { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.day { border: 1px solid var(--d-line); background: rgba(255, 255, 255, .03); border-radius: 14px; padding: 16px 6px 14px; display: flex; flex-direction: column; align-items: center; gap: 12px; min-height: 196px; color: var(--d-text); transition: background .25s, border-color .25s, transform .25s; }
+.day:hover { background: rgba(255, 255, 255, .07); }
+.day[aria-pressed='true'] { background: #fff; border-color: #fff; color: var(--ink); transform: translateY(-6px); }
+.day__n { font-size: 15px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.day__dots { display: flex; flex-direction: column; gap: 7px; align-items: center; }
+.dot { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: #fff; flex: none; }
+.dot svg { width: 18px; height: 18px; }
+.dot--rev { background: #f59e0b; } .dot--gbp { background: #3b82f6; } .dot--post { background: #db2777; } .dot--meta { background: #6366f1; } .dot--ads { background: #10b981; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-top: 20px; font-size: 15px; color: var(--d-muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 14px; height: 14px; border-radius: 4px; }
+.daybox { background: #fff; color: var(--text); border-radius: 16px; padding: 28px 30px; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; min-height: 300px; }
+.daybox::before { content: ''; position: absolute; left: 0; top: 0; width: 120px; height: 5px; background: var(--red); }
+.daybox .eyebrow { font-size: 13px; }
+.daybox h3 { font-size: 32px; font-weight: 800; color: var(--ink); margin-top: 8px; }
+.daybox ul { display: grid; gap: 14px; margin-top: 20px; }
+.daybox li { display: flex; gap: 14px; align-items: center; font-size: 19px; color: var(--ink); line-height: 1.35; animation: up .4s var(--ease) both; animation-delay: calc(var(--k) * 70ms); }
+.daybox li .dot { width: 40px; height: 40px; }
+.daybox li small { display: block; color: var(--muted); font-size: 15px; }
+.monthly { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--d-line); }
+.monthly h4 { font-size: 15px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red-soft); margin-bottom: 14px; }
+.monthly ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.monthly li { display: flex; gap: 10px; align-items: center; font-size: 19px; color: #e5e8ee; }
+.monthly li svg { width: 20px; height: 20px; color: var(--red-soft); flex: none; }
+
+/* ---------- Investimento ---------- */
+.prices { display: grid; grid-template-columns: 1fr 1.15fr .85fr; gap: 24px; }
+.price { position: relative; background: rgba(255, 255, 255, .04); border: 1px solid var(--d-line); border-radius: 18px; padding: 34px 32px; overflow: hidden; }
+.price::before { content: ''; position: absolute; left: 0; top: 0; width: 38%; height: 5px; background: var(--red); }
+.price--main { background: linear-gradient(140deg, var(--red) 0%, #e8262e 60%, #b8161d 100%); border-color: transparent; box-shadow: 0 24px 60px rgba(220, 28, 36, .28); }
+.price--main::before { background: #fff; }
+.price small { display: block; font-size: 14px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red-soft); margin-bottom: 18px; }
+.price--main small { color: #fff; opacity: .9; }
+.price b { display: block; font-size: 84px; font-weight: 800; letter-spacing: -.04em; line-height: 1; color: #fff; font-variant-numeric: tabular-nums; }
+.price b sub { font-size: 26px; font-weight: 700; letter-spacing: 0; vertical-align: baseline; margin-left: 4px; opacity: .85; }
+.price h3 { font-size: 24px; font-weight: 800; color: #fff; margin: 18px 0 8px; }
+.price p { font-size: 18px; color: var(--d-muted); }
+.price--main p { color: rgba(255, 255, 255, .9); }
+
+/* ---------- Decisões (checklist) ---------- */
+.chk-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; font-size: 17px; font-weight: 700; color: var(--muted); }
+.chk-head b { font-size: 17px; color: var(--ink); }
+.chk-bar { flex: 1; max-width: 320px; height: 8px; border-radius: 999px; background: #e3e6eb; overflow: hidden; }
+.chk-bar i { display: block; height: 100%; width: 0; background: #0c9d4a; border-radius: inherit; transition: width .5s var(--ease); }
+.pt .box { position: absolute; right: 22px; top: 22px; width: 34px; height: 34px; border-radius: 9px; border: 2px solid #cfd3da; display: grid; place-items: center; transition: background .25s, border-color .25s; }
+.pt .box svg { width: 20px; height: 20px; color: #fff; opacity: 0; transform: scale(.5); transition: opacity .25s, transform .25s; }
+.pt.is-ok { border-color: #0c9d4a; }
+.pt.is-ok::before { background: #0c9d4a; width: 100%; }
+.pt.is-ok .box { background: #0c9d4a; border-color: #0c9d4a; }
+.pt.is-ok .box svg { opacity: 1; transform: none; }
+.pt.is-ok .pt__ico { background: #0c9d4a; }
+.chk .pt { padding-right: 70px; }
+
+/* ---------- Encerramento ---------- */
+.close-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--d-line); }
+.close-row .brands img { height: 40px; }
+.close-row .brands .mc { height: 64px; }
+.close-row .btns { display: flex; gap: 12px; }
+
+/* ---------- Controles (fora do palco) ---------- */
+.ctrl { position: fixed; left: 50%; bottom: calc(var(--cueh, 0px) + 18px); transform: translate(-50%, 12px); display: flex; align-items: center; gap: 4px; padding: 6px; background: rgba(14, 17, 22, .9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, .1); border-radius: 999px; box-shadow: 0 14px 40px rgba(0, 0, 0, .4); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; z-index: 50; }
+.ctrl.show, .ctrl:hover, .ctrl:focus-within { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+.ctrl button { border: 0; background: transparent; color: #c9ced8; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; transition: background .2s, color .2s; }
+.ctrl button:hover { background: rgba(255, 255, 255, .1); color: #fff; }
+.ctrl button[aria-pressed='true'] { background: var(--red); color: #fff; }
+.ctrl svg { width: 19px; height: 19px; }
+.ctrl__n { min-width: 74px; text-align: center; font-size: 14px; font-weight: 800; letter-spacing: .06em; color: #fff; font-variant-numeric: tabular-nums; }
+.ctrl__sep { width: 1px; height: 22px; background: rgba(255, 255, 255, .14); margin: 0 4px; }
+
+.cue { position: fixed; left: 0; right: 0; bottom: 0; display: none; gap: 24px; align-items: flex-start; padding: 16px 28px; background: #1b1f28; border-top: 2px solid var(--red); color: #fff; font-size: 17px; line-height: 1.5; z-index: 40; }
+.cue.is-on { display: flex; }
+.cue b { flex: none; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red-soft); padding-top: 4px; width: 130px; }
+.cue small { display: block; color: #8b93a3; font-size: 14px; margin-top: 4px; }
+
+.ov { position: fixed; inset: 0; z-index: 60; background: rgba(7, 9, 12, .97); overflow: auto; padding: 36px clamp(16px, 4vw, 48px) 60px; display: none; }
+.ov.is-open { display: block; }
+.ov__head { display: flex; justify-content: space-between; align-items: center; max-width: 1500px; margin: 0 auto 24px; color: #fff; font-weight: 800; font-size: 18px; }
+.ov__head button { border: 1px solid rgba(255, 255, 255, .2); background: transparent; color: #fff; border-radius: 999px; padding: 8px 16px; font-weight: 700; font-size: 14px; }
+.ov__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 22px; max-width: 1500px; margin: 0 auto; }
+.ov__item { border: 0; background: none; padding: 0; text-align: left; color: #c9ced8; }
+.ov__item p { font-size: 13px; margin-top: 8px; line-height: 1.35; display: flex; gap: 8px; }
+.ov__item p b { color: var(--red-soft); }
+.mini { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 8px; outline: 2px solid transparent; outline-offset: 3px; transition: outline-color .2s; background: var(--dark); }
+.ov__item:hover .mini, .ov__item.is-cur .mini { outline-color: var(--red); }
+.mini .slide { inset: auto; left: 0; top: 0; width: 1600px; height: 900px; transform: scale(var(--ms, .16)); transform-origin: 0 0; font-size: 20px; line-height: 1.5; }
+
+.help { position: fixed; inset: 0; z-index: 70; background: rgba(7, 9, 12, .8); display: none; place-items: center; padding: 16px; }
+.help.is-open { display: grid; }
+.help__box { background: #fff; color: var(--ink); border-radius: 16px; padding: 28px 32px; width: min(520px, 100%); box-shadow: var(--shadow-lg); }
+.help__box h2 { font-size: 22px; margin-bottom: 14px; }
+.help__box li { display: flex; justify-content: space-between; gap: 20px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.help__box kbd { font-family: inherit; font-size: 13px; font-weight: 800; background: var(--gray); border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+.help__box p { font-size: 14px; color: var(--muted); margin-top: 14px; }
+
+/* ---------- Modo apresentador ---------- */
+.pv { position: fixed; inset: 0; display: grid; grid-template-columns: 1fr 380px; gap: 18px; padding: 18px; background: #0a0c10; color: #c9ced8; }
+.pv__cur { position: relative; min-height: 0; }
+.pv__cur .stage { box-shadow: 0 0 0 1px rgba(255, 255, 255, .08); }
+.pv__side { display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: auto; }
+.pv__top { display: flex; justify-content: space-between; align-items: center; }
+.pv__count { font-size: 26px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+.pv__timer { border: 1px solid rgba(255, 255, 255, .15); background: rgba(255, 255, 255, .05); color: #fff; border-radius: 999px; padding: 6px 14px; font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.pv__lbl { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red-soft); margin-top: 8px; }
+.pv__cue { font-size: 19px; line-height: 1.5; color: #fff; }
+.pv__note { font-size: 15px; line-height: 1.5; color: #8b93a3; }
+.pv__nav { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: auto; padding-top: 12px; }
+.pv__nav button { border: 0; border-radius: 10px; padding: 14px; font-weight: 800; background: rgba(255, 255, 255, .08); color: #fff; }
+.pv__nav button:last-child { background: var(--red); }
+body.presenter .viewport, body.presenter .ctrl, body.presenter .cue { display: none; }
+</style>
+</head>
+<body>
+<div class="viewport" id="viewport">
+  <div class="stage" id="stage" role="region" aria-roledescription="slide deck" aria-label="Nitro Roofing digital growth proposal">
+    <div class="progress" id="progress"></div>
+
+    <!-- 01 · CAPA -->
+    <section class="slide d cover" data-cue="This plan establishes the digital foundation and brings the ongoing work into one coordinated operation.">
+      <header class="sh a"><div class="brands"><img src="assets/nitro-logo-reversed.svg" alt="Nitro Roofing & Construction"><span>×</span><img class="mc" src="assets/melanies-logo.png" alt="Melanie's Business Consulting"></div></header>
+      <div class="cover__grid">
+        <div class="cover__copy">
+          <p class="eyebrow a">Digital Growth Proposal · October 2026</p>
+          <h1 class="title title--xl a" style="margin-top:22px">Nitro Roofing <span class="hl">&amp; Construction</span></h1>
+          <p class="lead a">A stronger digital presence, with ongoing management and clear performance reporting.</p>
+          <dl class="meta a">
+            <div><dt>Prepared by</dt><dd>Melanie’s Business Consulting</dd></div>
+            <div><dt>Prepared for</dt><dd>Nitro’s owners</dd></div>
+            <div><dt>Offices</dt><dd>New Bremen · Columbus · Dayton</dd></div>
+          </dl>
+        </div>
+        <div class="devices a">
+          <div class="float">
+            <div class="laptop__screen"><img src="assets/desk-home.webp" alt="New Nitro Roofing website, homepage" width="1440" height="900"></div>
+            <div class="laptop__base"></div>
+          </div>
+          <div class="phone float float--slow"><img src="assets/mob-home.webp" alt="New Nitro Roofing website on mobile" width="780" height="1688"></div>
+        </div>
+      </div>
+      <p class="fine">Expanded presentation based on the online proposal supplied by the client.</p>
+    </section>
+
+    <!-- 02 · VISÃO EXECUTIVA -->
+    <section class="slide l" data-cue="Phase 1 prepares the structure. Phase 2 keeps the work moving and guides improvements.">
+      <header class="sh a"><p class="eyebrow">Executive overview</p></header>
+      <h2 class="title a">A solid foundation. <span class="hl">Ongoing execution.</span></h2>
+      <p class="lead a">The plan combines initial setup with management of the channels homeowners use to find and choose Nitro.</p>
+      <div class="body">
+        <div class="pcs">
+          <button type="button" class="pc a" data-go="4"><span class="pc__go"><i data-i="arrow"></i></span><span class="pc__n">5</span><span class="pc__tag">Phase 1 · Initial project</span><h3>Five workstreams</h3><p>Prepare the website, business profiles and improvement plans.</p></button>
+          <button type="button" class="pc pc--dark a" data-go="11"><span class="pc__go"><i data-i="arrow"></i></span><span class="pc__n">8</span><span class="pc__tag">Phase 2 · Monthly management</span><h3>Eight workstreams</h3><p>Keep channels active and monitor new opportunities.</p></button>
+          <button type="button" class="pc a" data-go="15"><span class="pc__go"><i data-i="arrow"></i></span><span class="pc__n">1</span><span class="pc__tag">One view of performance</span><h3>One monthly report</h3><p>Connects channel data with recommended actions for the next period.</p></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · COMO O PLANO FUNCIONA -->
+    <section class="slide l" data-enter="road" data-cue="Beyond attracting visits, we need to understand which inquiries move forward and which activities deserve continued investment.">
+      <header class="sh a"><p class="eyebrow">How the plan works</p></header>
+      <h2 class="title a">From homeowner research <span class="hl">to sales follow-up</span></h2>
+      <p class="lead a">Each touchpoint should help a prospective customer move toward a conversation with Nitro.</p>
+      <div class="body">
+        <div class="road">
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="search"></i></span><small>Step 1</small><h3>Be found</h3><p>The website, Google Search and local profiles explain services and coverage areas.</p></button>
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="star"></i></span><small>Step 2</small><h3>Build confidence</h3><p>Real projects, consistent information and reviews support the homeowner’s comparison.</p></button>
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="phone"></i></span><small>Step 3</small><h3>Make contact easy</h3><p>Pages and campaigns direct interested homeowners to a call or inquiry form.</p></button>
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="chart"></i></span><small>Step 4</small><h3>Learn from results</h3><p>Lead sources and sales progress help identify which activities bring useful opportunities.</p></button>
+        </div>
+      </div>
+      <p class="fine">A lead is a potential customer inquiry. Outcomes also depend on Nitro’s response and sales process.</p>
+    </section>
+
+    <!-- 04 · FASE 1 -->
+    <section class="slide d" data-cue="We will cover each workstream, starting with the website that receives traffic and captures inquiries.">
+      <header class="sh a"><p class="eyebrow">Phase 1 · Foundation</p></header>
+      <h2 class="title a">Five projects <span class="hl">to prepare the base</span></h2>
+      <p class="lead a">The initial phase combines implementation with reviews that guide ongoing management.</p>
+      <div class="body">
+        <div class="tiles">
+          <button type="button" class="tile a" data-go="5"><span class="tile__go"><i data-i="arrow"></i></span><span class="tile__n">01</span><h3>Website and control panels</h3><p>Launch the new site, enable content editing and track incoming leads.</p></button>
+          <button type="button" class="tile a" data-go="8"><span class="tile__go"><i data-i="arrow"></i></span><span class="tile__n">02</span><h3>Google Business Profiles</h3><p>Optimize each office’s profile and local business information.</p></button>
+          <div class="tile a"><span class="tile__n">03–05</span><h3>Reviews and reputation</h3>
+            <div class="gos">
+              <button type="button" class="go" data-go="9"><b>03</b>Paid ads audit<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="10"><b>04</b>Social media review<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="10"><b>05</b>Nextdoor and Yelp restructure<i data-i="arrow"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · SITE -->
+    <section class="slide l" data-cue="The website is Nitro’s owned foundation: it presents the work and receives traffic from other channels.">
+      <header class="sh a"><p class="eyebrow">Phase 1 · Service 01</p></header>
+      <div class="split">
+        <div class="split__copy">
+          <h2 class="title title--sm a">The new website <span class="hl">supports customer decisions</span></h2>
+          <p class="lead a">The proposal states that the website is already built in a preview environment and ready for the launch stage.</p>
+          <div class="pts pts--list">
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="users"></i></span><span><h3>Content for homeowners</h3><p>Service pages and project examples help visitors understand Nitro’s work and find the right service.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="search"></i></span><span><h3>Search-ready structure</h3><p>Organized URLs, a sitemap, structured markup and attention to technical performance.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="camera"></i></span><span><h3>CompanyCam project portfolio</h3><p>The proposal describes 208 synchronized projects with photos, filters and detail pages.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="rocket"></i></span><span><h3>Launch on Nitro’s domain</h3><p>Review content, forms and access before publishing on nitroroofing.com.</p></span></button>
+          </div>
+        </div>
+        <div class="shots a">
+          <div class="switch" role="group" aria-label="Website pages">
+            <button type="button" aria-pressed="true" data-shot="0">Home</button>
+            <button type="button" aria-pressed="false" data-shot="1">Projects</button>
+            <button type="button" aria-pressed="false" data-shot="2">Service page</button>
+          </div>
+          <a class="btn btn--red" href="https://igorstutz.github.io/nitroroofing/" target="_blank" rel="noopener">Live preview<i data-i="ext"></i></a>
+          <div class="browser">
+            <div class="browser__bar"><i></i><i></i><i></i><span class="browser__url" data-url>nitroroofing.com</span></div>
+            <div class="browser__view">
+              <img class="is-on" src="assets/desk-home.webp" alt="Homepage" width="1440" height="900">
+              <img src="assets/desk-projects.webp" alt="Projects gallery" width="1440" height="900">
+              <img src="assets/desk-service.webp" alt="Service page" width="1440" height="900">
+            </div>
+          </div>
+          <div class="phone float"><img src="assets/mob-projects.webp" alt="Projects page on mobile" width="780" height="1688"></div>
+          <div class="badges">
+            <div class="badge"><b>57</b><span>pages reported as completed</span></div>
+            <div class="badge"><b>208</b><span>CompanyCam projects synced</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="fine">The source reports 57 completed pages. Page count, integrations and launch readiness should be confirmed during launch review.</p>
+    </section>
+
+    <!-- 06 · PAINÉIS -->
+    <section class="slide l" data-cue="The panels support daily work and help prevent information from getting lost between marketing and sales.">
+      <header class="sh a"><p class="eyebrow">Phase 1 · Service 01</p></header>
+      <div class="split">
+        <div class="split__copy">
+          <h2 class="title title--sm a">The team gains control <span class="hl">and a lead history</span></h2>
+          <p class="lead a">Administrative panels allow routine content updates and access to lead information.</p>
+          <div class="pts pts--list">
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="edit"></i></span><span><h3>Content editing</h3><p>Update copy, images, services, projects and reviews through the admin panel.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="target"></i></span><span><h3>Lead source</h3><p>Review sources and campaign tags, known as UTMs, to connect inquiries with marketing activity.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="doc"></i></span><span><h3>History and export</h3><p>View pages visited and lead status, with CSV export included in the proposal.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="users"></i></span><span><h3>Sales follow-up</h3><p>Use available information to add context to customer conversations and monitor progress.</p></span></button>
+          </div>
+        </div>
+        <div class="a">
+          <div class="adm">
+            <div class="adm__tabs" role="tablist" aria-label="Admin preview">
+              <button type="button" role="tab" aria-selected="true" data-adm="0"><i data-i="inbox"></i>Leads</button>
+              <button type="button" role="tab" aria-selected="false" data-adm="1"><i data-i="edit"></i>Edit content</button>
+              <span>Illustrative data</span>
+            </div>
+            <div class="adm__body" data-adm-body></div>
+          </div>
+          <p class="mock-note">Click a lead to see its history. Sample data for demonstration only.</p>
+        </div>
+      </div>
+      <p class="fine">The dashboard figures on the original proposal page are illustrative, not actual Nitro performance results.</p>
+    </section>
+
+    <!-- 07 · SEO GEO AEO -->
+    <section class="slide l" data-cue="The aim is to improve the opportunity for discovery across different search formats.">
+      <header class="sh a"><p class="eyebrow">Search and content</p></header>
+      <h2 class="title a">SEO, GEO and AEO <span class="hl">in plain language</span></h2>
+      <p class="lead a">These approaches help search systems find, interpret and use the company’s content.</p>
+      <div class="body">
+        <div class="sx">
+          <button type="button" class="sx__card a">
+            <div class="sx__mock">
+              <div class="q"><i data-i="search"></i>roof replacement columbus oh</div>
+              <div class="serp"><small>nitroroofing.com › roof-replacement</small><b>Roof Replacement in Columbus, OH | Nitro Roofing</b><span>Service page with coverage areas, project photos and a simple way to request an inspection.</span></div>
+            </div>
+            <div class="sx__txt"><h3><small>SEO</small>Traditional search</h3><p>Organize site structure and content so search engines can understand services and locations.</p></div>
+          </button>
+          <button type="button" class="sx__card a">
+            <div class="sx__mock">
+              <div class="q"><i data-i="bot"></i>Which roofers serve the Dayton area?</div>
+              <div class="ai"><i><i data-i="spark"></i></i><p>Clear, structured information about services and service areas makes it easier for AI tools to describe a company accurately.<br><em>Source: nitroroofing.com</em></p></div>
+            </div>
+            <div class="sx__txt"><h3><small>GEO</small>Generative search</h3><p>Prepare clear, structured information for systems that generate answers using artificial intelligence.</p></div>
+          </button>
+          <button type="button" class="sx__card a">
+            <div class="sx__mock">
+              <div class="faq"><div>Which services does Nitro offer?<span>−</span></div><p>A short, direct answer published on the site.</p><div>Which cities does Nitro serve?<span>+</span></div></div>
+            </div>
+            <div class="sx__txt"><h3><small>AEO</small>Direct answers</h3><p>Provide useful FAQs and concise answers about Nitro’s services.</p></div>
+          </button>
+        </div>
+        <div class="strip a"><b>Ongoing application</b><p>Review pages, structured data and customer questions as part of monthly improvements.</p></div>
+      </div>
+      <p class="fine">Technical preparation does not guarantee Google rankings or citations in AI-generated answers. Search examples are illustrative.</p>
+    </section>
+
+    <!-- 08 · GOOGLE BUSINESS PROFILES -->
+    <section class="slide l" data-cue="Each profile should provide accurate information and make the homeowner’s next step easy.">
+      <header class="sh a"><p class="eyebrow">Phase 1 · Service 02</p></header>
+      <div class="split">
+        <div class="split__copy">
+          <h2 class="title title--sm a">Google profiles strengthen <span class="hl">local visibility</span></h2>
+          <p class="lead a">Initial optimization aligns each office’s profile with its actual services and coverage area.</p>
+          <div class="pts pts--list">
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="pin"></i></span><span><h3>Review each office</h3><p>Check business categories, services, service areas and contact details.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="image"></i></span><span><h3>Improve presentation</h3><p>Refresh descriptions and project photos that help homeowners understand the company.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="checkc"></i></span><span><h3>Check the details</h3><p>Review hours, links, attributes and available questions and answers.</p></span></button>
+            <button type="button" class="pt a"><span class="pt__ico"><i data-i="cal"></i></span><span><h3>Prepare ongoing management</h3><p>Establish an update calendar and monitor calls, website visits and direction requests.</p></span></button>
+          </div>
+        </div>
+        <div class="a">
+          <div class="gbp">
+            <div class="gbp__tabs" role="group" aria-label="Offices">
+              <button type="button" aria-pressed="true" data-office="New Bremen"><i data-i="pin"></i>New Bremen</button>
+              <button type="button" aria-pressed="false" data-office="Columbus"><i data-i="pin"></i>Columbus</button>
+              <button type="button" aria-pressed="false" data-office="Dayton"><i data-i="pin"></i>Dayton</button>
+            </div>
+            <div class="gbp__map" data-map><span class="pin"><i data-i="pinf"></i></span></div>
+            <div class="gbp__in">
+              <h4>Nitro Roofing &amp; Construction</h4>
+              <p>Roofing contractor · <span data-city>New Bremen</span>, OH</p>
+              <div class="gbp__acts"><span><i data-i="phone"></i>Call</span><span><i data-i="web"></i>Website</span><span><i data-i="nav"></i>Directions</span><span><i data-i="image"></i>Photos</span></div>
+              <ul class="gbp__chk">
+                <li><i data-i="checkc"></i>Categories and services</li>
+                <li><i data-i="checkc"></i>Service areas</li>
+                <li><i data-i="checkc"></i>Hours, links and attributes</li>
+                <li><i data-i="checkc"></i>Questions and answers</li>
+              </ul>
+            </div>
+          </div>
+          <p class="mock-note">Select an office. Profile layout is illustrative.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 · AUDITORIA DE ANÚNCIOS -->
+    <section class="slide l" data-cue="The initial deliverable is a diagnostic review with priorities. Ongoing optimization belongs to the monthly phase.">
+      <header class="sh a"><p class="eyebrow">Phase 1 · Service 03</p></header>
+      <h2 class="title a">The advertising audit <span class="hl">sets improvement priorities</span></h2>
+      <p class="lead a">The review covers Google Ads, Local Services Ads and Meta Ads, with a prioritized action plan.</p>
+      <div class="body">
+        <div class="pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="search"></i></span><span><h3>Google Ads</h3><p>Examine campaign structure, search terms, negative keywords and budget allocation.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="shield"></i></span><span><h3>Local Services Ads · LSA</h3><p>Review categories, service areas, reviews and lead disputes.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="social"></i></span><span><h3>Meta Ads · Facebook and Instagram</h3><p>Assess audiences, creative assets and campaign offers.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="target"></i></span><span><h3>Tracking and landing pages</h3><p>Check call and form conversion tracking and alignment between ads and destination pages.</p></span></button>
+        </div>
+      </div>
+      <p class="fine">Lower costs and increased leads are objectives. The proposal does not guarantee results or improvement percentages.</p>
+    </section>
+
+    <!-- 10 · SOCIAL E LISTAGENS -->
+    <section class="slide l" data-cue="These reviews prepare the channels for ongoing management with consistent business information.">
+      <header class="sh a"><p class="eyebrow">Phase 1 · Services 04 and 05</p></header>
+      <h2 class="title a">Social profiles and listings <span class="hl">support brand confidence</span></h2>
+      <p class="lead a">Homeowners should recognize the same Nitro across the platforms they consult.</p>
+      <div class="body">
+        <div class="pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="social"></i></span><span><h3><small>Service 04</small>Social media review</h3><p>Check profile descriptions, links, branding, publishing frequency and engagement.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="compass"></i></span><span><h3><small>Service 04</small>Content direction</h3><p>Compare local competitors and define content themes and improvement priorities.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="star"></i></span><span><h3><small>Service 05</small>Nextdoor and Yelp</h3><p>Restructure information, categories and service areas, refresh photos and review response status.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="layers"></i></span><span><h3><small>Service 05</small>Listing consistency</h3><p>Check business name, address and phone number, plus duplicate or unclaimed profiles.</p></span></button>
+        </div>
+      </div>
+      <p class="fine">Scope follows the English version displayed online: Nextdoor and Yelp. Additional directories require agreement.</p>
+    </section>
+
+    <!-- 11 · FASE 2 -->
+    <section class="slide d" data-cue="The monthly fee brings the management routine together. Merchandise and print orders carry a separate fee.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Monthly management</p></header>
+      <h2 class="title a">Eight workstreams keep <span class="hl">the operation moving</span></h2>
+      <p class="lead a">Recurring management follows foundation preparation, according to the agreed implementation plan.</p>
+      <div class="body">
+        <div class="tiles">
+          <div class="tile tile--grp a"><span class="tile__cnt">4 workstreams</span><h3>Presence and acquisition</h3>
+            <div class="gos">
+              <button type="button" class="go" data-go="12"><b>06</b>SEO, GEO and AEO<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="12"><b>07</b>Google Business Profiles<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="13"><b>08</b>Google Ads and LSA<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="14"><b>09</b>Social media and Meta Ads<i data-i="arrow"></i></button>
+            </div>
+          </div>
+          <div class="tile tile--grp a"><span class="tile__cnt">2 workstreams</span><h3>Data and operations</h3>
+            <div class="gos">
+              <button type="button" class="go" data-go="15"><b>10</b>Search Console and Analytics reporting<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="16"><b>11</b>Phased development of the NOS app<i data-i="arrow"></i></button>
+            </div>
+          </div>
+          <div class="tile tile--grp a"><span class="tile__cnt">2 workstreams</span><h3>Brand and reputation</h3>
+            <div class="gos">
+              <button type="button" class="go" data-go="18"><b>12</b>Merchandise and print coordination<i data-i="arrow"></i></button>
+              <button type="button" class="go" data-go="18"><b>13</b>Nextdoor and Yelp maintenance<i data-i="arrow"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 · SITE E PERFIS -->
+    <section class="slide l" data-cue="The foundation needs continued attention as projects progress, information changes and new reviews arrive.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Services 06 and 07</p></header>
+      <h2 class="title a">The site and Google profiles <span class="hl">receive ongoing attention</span></h2>
+      <p class="lead a">The routine combines technical maintenance with updates that keep the business presence current.</p>
+      <div class="body">
+        <div class="pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="search"></i></span><span><h3><small>Service 06</small>SEO, GEO and AEO</h3><p>Monthly strategy review, page and content optimization, technical health, updates and security.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="wrench"></i></span><span><h3><small>Service 06</small>Panel support</h3><p>Support Nitro’s team in using the administrative tools and managing information.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="reply"></i></span><span><h3><small>Service 07</small>Google Business Profiles</h3><p>Reply to reviews on Monday, Wednesday and Friday. Update profiles once a week.</p><span class="tags"><span class="tag"><i data-i="cal"></i>Mon · Wed · Fri replies</span><span class="tag"><i data-i="clock"></i>Weekly update</span></span></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="image"></i></span><span><h3><small>Service 07</small>Monthly profile refresh</h3><p>Add photos, refresh copy and monitor calls, direction requests and views.</p></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 · GOOGLE ADS E LSA -->
+    <section class="slide l" data-cue="Decisions should consider the opportunities reaching the team as well as clicks and traffic.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Service 08</p></header>
+      <h2 class="title a">Google Ads and LSA <span class="hl">with continuous optimization</span></h2>
+      <p class="lead a">Management monitors budget use and the opportunities generated by campaigns.</p>
+      <div class="body">
+        <div class="pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="sliders"></i></span><span><h3>Campaign adjustments</h3><p>Manage bids, budgets, keywords and negative terms using available performance data.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="shield"></i></span><span><h3>LSA management</h3><p>Monitor incoming leads, disputes and profile health.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="flask"></i></span><span><h3>Message testing</h3><p>Test ad copy and landing pages to identify improvement opportunities.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="chart"></i></span><span><h3>Campaign-level evaluation</h3><p>Track cost per lead and relate inquiries to the sales progress reported by Nitro.</p></span></button>
+        </div>
+      </div>
+      <p class="fine">Media budget and payment arrangements require confirmation. The page does not specify an included ad-spend amount.</p>
+    </section>
+
+    <!-- 14 · SOCIAL E META ADS -->
+    <section class="slide l" data-cue="Content shows Nitro’s work, while campaigns expand the reach of selected messages.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Service 09</p></header>
+      <h2 class="title a">Social content and Meta Ads <span class="hl">with a defined cadence</span></h2>
+      <p class="lead a">Instagram and Facebook receive content production and paid campaign management.</p>
+      <div class="body">
+        <div class="pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="cal"></i></span><span><h3>Two posts per week</h3><p>Static posts, dynamic formats or Reels, according to the content plan.</p><span class="tags"><span class="tag">Static</span><span class="tag">Dynamic</span><span class="tag">Reels</span></span></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="edit"></i></span><span><h3>Production and publishing</h3><p>Content planning, captions, design and posting.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="social"></i></span><span><h3>Meta campaigns</h3><p>Daily monitoring of spend, leads and creative performance.</p><span class="tags"><span class="tag"><i data-i="clock"></i>Every day</span></span></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="refresh"></i></span><span><h3>Results review</h3><p>Campaign reporting informs the next adjustments to audiences, messaging and content.</p></span></button>
+        </div>
+      </div>
+      <p class="fine">Operating suggestion: assign content suppliers and approvers. On-site photo or video production is not detailed in the source.</p>
+    </section>
+
+    <!-- 15 · RELATÓRIO MENSAL -->
+    <section class="slide l" data-cue="The monthly review should end with clear decisions about what to continue, correct or test.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Service 10</p></header>
+      <h2 class="title a">One monthly report <span class="hl">to guide decisions</span></h2>
+      <p class="lead a">The report combines channel performance with recommended actions for the next period.</p>
+      <div class="body">
+        <div class="pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="search"></i></span><span><h3>How homeowners find Nitro</h3><p>Search Console: queries, rankings and indexing. Analytics: traffic, sources and conversions.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="pin"></i></span><span><h3>Where inquiries come from</h3><p>Leads by channel and city, using data available from the site and connected systems.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="target"></i></span><span><h3>How campaigns perform</h3><p>Review Google Ads, LSA and Meta Ads to compare spend with incoming inquiries.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="flag"></i></span><span><h3>What happens next</h3><p>Prioritized improvements and the following month’s content calendar for approval.</p></span></button>
+        </div>
+      </div>
+      <p class="fine">Targets and baseline performance will be established with Nitro. The proposal does not provide revenue forecasts.</p>
+    </section>
+
+    <!-- 16 · NOS -->
+    <section class="slide l" data-cue="Each stage needs a defined scope and acceptance criteria before the team moves forward.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Service 11</p></header>
+      <h2 class="title a">NOS development proceeds <span class="hl">in validated stages</span></h2>
+      <p class="lead a">The Nitro Operating System is the company app. The proposal provides for phased completion.</p>
+      <div class="body">
+        <div class="stages" data-stages>
+          <button type="button" class="stg a is-cur" data-stage="0"><span class="stg__n"><b>1</b><span>Stage 1</span></span><h3>Review and roadmap</h3><p>Assess the existing build and map current office and crew workflows.</p></button>
+          <button type="button" class="stg a" data-stage="1"><span class="stg__n"><b>2</b><span>Stage 2</span></span><h3>Priority features</h3><p>Complete the highest-value functions first and test with a small team group.</p></button>
+          <button type="button" class="stg a" data-stage="2"><span class="stg__n"><b>3</b><span>Stage 3</span></span><h3>Rollout and training</h3><p>Release to the team, train users and make improvements based on actual use.</p></button>
+          <button type="button" class="stg a" data-stage="3"><span class="stg__n"><b>4</b><span>Stage 4</span></span><h3>Integration and evolution</h3><p>Connect website leads and other tools, validating each stage before the next begins.</p></button>
+        </div>
+        <div class="a">
+          <div class="track"><i data-track></i></div>
+          <div class="track__lbl"><span>Validate each stage before the next begins</span><span data-track-lbl>Stage 1 of 4</span></div>
+        </div>
+      </div>
+      <p class="fine">The page does not set dates, development hours or a final NOS completion deadline. These require agreement.</p>
+    </section>
+
+    <!-- 17 · NOS KPIs -->
+    <section class="slide l" data-cue="A useful dashboard depends on connecting the sources and keeping sales records complete.">
+      <header class="sh a"><p class="eyebrow">NOS · Integrations and KPIs</p></header>
+      <h2 class="title a">Marketing and sales <span class="hl">in one operational view</span></h2>
+      <p class="lead a">The scope describes JobNimbus and QuickBooks integrations to consolidate marketing data.</p>
+      <div class="body">
+        <div class="flow a">
+          <div class="node"><i><i data-i="users"></i></i><span>JobNimbus<small>Leads and sales records</small></span></div>
+          <span class="wire"></span>
+          <div class="node node--c"><i><i data-i="app"></i></i><span>NOS dashboard<small>One operational view</small></span></div>
+          <span class="wire wire--r"></span>
+          <div class="node"><i><i data-i="dollar"></i></i><span>QuickBooks<small>Marketing expenses</small></span></div>
+        </div>
+        <div class="kpis pts">
+          <button type="button" class="pt a"><span><h3>Lead source and location</h3><p style="font-size:17px">Totals by office and source.</p></span><span class="tags"><span class="tag">By office</span><span class="tag">By source</span><span class="tag">Missing from JobNimbus</span><span class="tag">Disputed leads</span></span></button>
+          <button type="button" class="pt a"><span><h3>Cost and acquisition</h3><p style="font-size:17px">Using agreed definitions.</p></span><span class="tags"><span class="tag">Cost per lead by source</span><span class="tag">Blended cost per lead</span><span class="tag">Acquisition metrics</span></span></button>
+          <button type="button" class="pt a"><span><h3>Sales progress</h3><p style="font-size:17px">From inquiry to estimate.</p></span><span class="tags"><span class="tag">Lead-to-estimate conversion</span><span class="tag">NSPL · net sales per lead</span></span></button>
+          <button type="button" class="pt a"><span><h3>Budget control</h3><p style="font-size:17px">By source and location.</p></span><span class="tags"><span class="tag">Planned vs. actual spend</span><span class="tag">Dashboard budget settings</span></span></button>
+        </div>
+      </div>
+      <p class="fine">Nitro supplies data for all sources. Formulas, permissions, integration costs and system availability need validation.</p>
+    </section>
+
+    <!-- 18 · MARCA E AVALIAÇÕES -->
+    <section class="slide l" data-cue="Physical materials carry the brand into the field while business profiles remain current.">
+      <header class="sh a"><p class="eyebrow">Phase 2 · Services 12 and 13</p></header>
+      <h2 class="title a">Brand materials and reviews <span class="hl">complete the presence</span></h2>
+      <p class="lead a">Two additional workstreams support the digital channels and the company’s reputation.</p>
+      <div class="body">
+        <div class="trio pts">
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="shirt"></i></span><span><h3><small>Service 12</small>Merchandise and print</h3><p>Design hats, shirts, branded merchandise, yard signs and business cards aligned with Nitro’s brand.</p><span class="tags"><span class="tag">Hats</span><span class="tag">Shirts</span><span class="tag">Yard signs</span><span class="tag">Business cards</span></span></span></button>
+          <button type="button" class="pt fee a"><span class="big">20%</span><span><h3>Ordering and coordination</h3><p>Coordinate suppliers and delivery. A 20% fee on the final order value applies outside the monthly fee.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="star"></i></span><span><h3><small>Service 13</small>Nextdoor and Yelp</h3><p>Regularly add recent project photos and reply to every new review on both platforms.</p><span class="tags"><span class="tag"><i data-i="camera"></i>Project photos</span><span class="tag"><i data-i="reply"></i>Every review answered</span></span></span></button>
+        </div>
+      </div>
+      <p class="fine">Confirm production, shipping, taxes, order terms and the fee calculation basis before placing an order.</p>
+    </section>
+
+    <!-- 19 · ROTINA -->
+    <section class="slide d" data-cue="The cadence makes work predictable and helps Nitro follow what has been delivered.">
+      <header class="sh a"><p class="eyebrow">Execution routine</p></header>
+      <h2 class="title a">An organized week <span class="hl">and a monthly review</span></h2>
+      <p class="lead a">The proposal includes a reference cadence. Exact days will be agreed at kickoff.</p>
+      <div class="body">
+        <div class="rhythm">
+          <div class="a">
+            <div class="week" data-week></div>
+            <div class="legend" data-legend></div>
+            <div class="monthly">
+              <h4>Every month</h4>
+              <ul>
+                <li><i data-i="check"></i>Review search strategy</li>
+                <li><i data-i="check"></i>Add profile photos</li>
+                <li><i data-i="check"></i>Assess advertising</li>
+                <li><i data-i="check"></i>Report recommended actions</li>
+              </ul>
+            </div>
+          </div>
+          <div class="daybox a" data-daybox aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 20 · IMPLEMENTAÇÃO -->
+    <section class="slide l" data-enter="road" data-cue="The sequence becomes a dated plan once access, content and responsible people are confirmed.">
+      <header class="sh a"><p class="eyebrow">Implementation</p></header>
+      <h2 class="title a">From kickoff <span class="hl">to monthly management</span></h2>
+      <p class="lead a">The proposal defines a sequence without committing to a duration for each stage.</p>
+      <div class="body">
+        <div class="road">
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="key"></i></span><small>Stage 1</small><h3>Kickoff and access</h3><p>Agree on goals, owners and access to Google, Meta, business profiles and hosting.</p></button>
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="search"></i></span><small>Stage 2</small><h3>Audits and priorities</h3><p>Deliver advertising and social reviews and restructure Nextdoor and Yelp.</p></button>
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="rocket"></i></span><small>Stage 3</small><h3>Launch</h3><p>Publish the new site and complete initial Google Business Profile optimization.</p></button>
+          <button type="button" class="rs a"><span class="rs__dot"><i data-i="refresh"></i></span><small>Stage 4</small><h3>Recurring management</h3><p>Begin monthly execution and reporting. NOS follows its separately validated roadmap.</p></button>
+        </div>
+        <div class="gov a">
+          <div><i><i data-i="users"></i></i><span><b>Consulting team · suggested</b><p>Executes the work and reports results.</p></span></div>
+          <div class="gov--n"><i><i data-i="flag"></i></i><span><b>Nitro · suggested</b><p>Approves content, sets priorities and updates lead outcomes.</p></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 21 · INVESTIMENTO -->
+    <section class="slide d" data-enter="count" data-cue="The investment separates foundation work from recurring management. Variable costs need to be clear at agreement.">
+      <header class="sh a"><p class="eyebrow">Investment</p></header>
+      <h2 class="title a">An initial project <span class="hl">and a fixed monthly fee</span></h2>
+      <p class="lead a">All values are in US dollars, as stated in the online proposal.</p>
+      <div class="body">
+        <div class="prices">
+          <div class="price a"><small>Phase 1 · Initial project</small><b data-count="7800" data-pre="$">$7,800</b><h3>Five foundation services</h3><p>Including the new website and control panels.</p></div>
+          <div class="price price--main a"><small>Phase 2 · Ongoing management</small><b><span data-count="5800" data-pre="$">$5,800</span><sub>/ month</sub></b><h3>Eight management workstreams</h3><p>The source specifies a flat fee with no fee on media investment.</p></div>
+          <div class="price a"><small>Merchandise and print</small><b data-count="20" data-suf="%">20%</b><h3>Fee per order</h3><p>On the final order value, charged separately from the monthly fee.</p></div>
+        </div>
+        <div class="strip a"><b>To confirm</b><span class="tags"><span class="tag">Ad spend</span><span class="tag">Tools and licenses</span><span class="tag">External costs</span><span class="tag">Payment terms</span><span class="tag">Monthly start date</span><span class="tag">Contract duration</span></span></div>
+      </div>
+      <p class="fine">The source counts merchandise among the eight monthly workstreams but specifies an additional 20% fee per order.</p>
+    </section>
+
+    <!-- 22 · DECISÕES -->
+    <section class="slide l" data-cue="These decisions establish clear responsibilities and a basis for reviewing progress each month.">
+      <header class="sh a"><p class="eyebrow">Owner alignment</p></header>
+      <h2 class="title a">The decisions needed <span class="hl">to start with clarity</span></h2>
+      <p class="lead a">The next step is to confirm scope and turn the proposal into an execution calendar.</p>
+      <div class="body">
+        <div class="chk-head a"><span><b data-chk-n>0 of 4</b> aligned</span><span class="chk-bar"><i data-chk-bar></i></span><span>Click a card to mark it as aligned.</span></div>
+        <div class="pts chk">
+          <button type="button" class="pt a" data-check><span class="box"><i data-i="check"></i></span><span class="pt__ico"><i data-i="pin"></i></span><span><h3>Business priorities</h3><p>Which cities and services need the most attention? What is Nitro’s capacity to respond and deliver?</p></span></button>
+          <button type="button" class="pt a" data-check><span class="box"><i data-i="check"></i></span><span class="pt__ico"><i data-i="users"></i></span><span><h3>Operations and approvals</h3><p>Who provides access and project assets, approves content and follows up with leads?</p></span></button>
+          <button type="button" class="pt a" data-check><span class="box"><i data-i="check"></i></span><span class="pt__ico"><i data-i="cal"></i></span><span><h3>Terms and timing</h3><p>Confirm fees, external expenses, launch milestones and the start of recurring management.</p></span></button>
+          <button type="button" class="pt a" data-check><span class="box"><i data-i="check"></i></span><span class="pt__ico"><i data-i="app"></i></span><span><h3>First NOS stage</h3><p>Agree on priority features, available integrations and validation criteria.</p></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 23 · REFERÊNCIA -->
+    <section class="slide d" data-cue="This presentation supports the discussion. The final agreement should record the commercial and operating terms.">
+      <header class="sh a"><p class="eyebrow">Reference and scope</p></header>
+      <h2 class="title a">Presentation <span class="hl">basis</span></h2>
+      <p class="lead a">Prepared from the October 2026 digital proposal.</p>
+      <div class="body">
+        <div class="pts">
+          <div class="pt a"><span class="pt__ico"><i data-i="link"></i></span><span><h3>Primary source</h3><p>igorstutz.github.io/nitroroofing-proposal/ · Accessed October 21, 2026.</p></span></div>
+          <div class="pt a"><span class="pt__ico"><i data-i="layers"></i></span><span><h3>Source terms retained</h3><p>Two phases, 13 services, stated cadences, described integrations and commercial amounts from the displayed English version.</p></span></div>
+          <div class="pt a"><span class="pt__ico"><i data-i="edit"></i></span><span><h3>Presentation elaboration</h3><p>Plain-language explanations, business applications and governance suggestions expand the original material.</p></span></div>
+          <div class="pt a"><span class="pt__ico"><i data-i="checkc"></i></span><span><h3>Before final agreement</h3><p>Confirm technical readiness, reported figures, NOS scope, external expenses and contract terms.</p></span></div>
+        </div>
+        <div class="close-row a">
+          <div class="brands"><img src="assets/nitro-logo-reversed.svg" alt="Nitro Roofing & Construction"><span>×</span><img class="mc" src="assets/melanies-logo.png" alt="Melanie's Business Consulting"></div>
+          <div class="btns">
+            <a class="btn btn--ghost" href="https://igorstutz.github.io/nitroroofing-proposal/" target="_blank" rel="noopener">Online proposal<i data-i="ext"></i></a>
+            <a class="btn btn--red" href="https://igorstutz.github.io/nitroroofing/" target="_blank" rel="noopener">New website<i data-i="ext"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="fine">The source’s internal Portuguese text lists additional directories. This deck does not treat that expansion as a commitment.</p>
+    </section>
+  </div>
+</div>
+
+<!-- Controles -->
+<nav class="ctrl" id="ctrl" aria-label="Presentation controls">
+  <button type="button" data-act="prev" title="Previous (←)" aria-label="Previous slide"><i data-i="left"></i></button>
+  <span class="ctrl__n" id="counter">01 / 23</span>
+  <button type="button" data-act="next" title="Next (→)" aria-label="Next slide"><i data-i="arrow"></i></button>
+  <span class="ctrl__sep"></span>
+  <button type="button" data-act="grid" title="All slides (G)" aria-label="All slides"><i data-i="grid"></i></button>
+  <button type="button" data-act="notes" title="Presenter cue (N)" aria-label="Toggle presenter cue" aria-pressed="false"><i data-i="note"></i></button>
+  <button type="button" data-act="pres" title="Presenter window (P)" aria-label="Open presenter window"><i data-i="monitor"></i></button>
+  <button type="button" data-act="full" title="Full screen (F)" aria-label="Full screen"><i data-i="expand"></i></button>
+  <button type="button" data-act="help" title="Shortcuts (?)" aria-label="Keyboard shortcuts"><i data-i="help"></i></button>
+</nav>
+<div class="cue" id="cue" aria-live="polite"><b>Presenter cue</b><div><span id="cueText"></span><small id="cueNote"></small></div></div>
+
+<div class="ov" id="ov" role="dialog" aria-label="All slides">
+  <div class="ov__head"><span>All slides</span><button type="button" data-act="grid">Close · Esc</button></div>
+  <div class="ov__grid" id="ovGrid"></div>
+</div>
+
+<div class="help" id="help" role="dialog" aria-label="Keyboard shortcuts">
+  <div class="help__box">
+    <h2>Keyboard shortcuts</h2>
+    <ul>
+      <li>Next slide <kbd>→ · Space · PgDn</kbd></li>
+      <li>Previous slide <kbd>← · PgUp</kbd></li>
+      <li>First / last slide <kbd>Home · End</kbd></li>
+      <li>Go to slide <kbd>number + Enter</kbd></li>
+      <li>All slides <kbd>G</kbd></li>
+      <li>Presenter cue on this screen <kbd>N</kbd></li>
+      <li>Presenter window (notes, next slide, timer) <kbd>P</kbd></li>
+      <li>Full screen <kbd>F</kbd></li>
+    </ul>
+    <p>Tip: share only this window and keep the presenter window on your own screen. Cards, tabs and days are clickable during the presentation.</p>
+  </div>
+</div>
+
+<script>
+(() => {
+  // Ícones (traço 24×24, mesmo conjunto da proposta)
+  const I = {
+    web: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/>',
+    pin: '<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+    pinf: '<path d="M12 22s-8-7-8-12.5a8 8 0 0 1 16 0C20 15 12 22 12 22z"/><circle cx="12" cy="9.5" r="3" fill="#fff"/>',
+    target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
+    social: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+    star: '<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+    chart: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    app: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
+    check: '<path d="m5 12 5 5 9-10"/>',
+    checkc: '<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',
+    ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+    cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/>',
+    inbox: '<path d="M3 13h5l1 3h6l1-3h5"/><path d="M5 5h14l2 8v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z"/>',
+    camera: '<path d="M4 7h3l2-3h6l2 3h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="4"/>',
+    bot: '<rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 14h.01M15 14h.01"/>',
+    flag: '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+    rocket: '<path d="M5 15c-1 1-2 4-2 6 2 0 5-1 6-2M9 15l-3-3c1-5 5-9 12-9 0 7-4 11-9 12z"/><circle cx="15" cy="9" r="1.5"/>',
+    users: '<circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0M16 4.5a3.5 3.5 0 0 1 0 7M22 20a7 7 0 0 0-4-6.3"/>',
+    reply: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 6 6v4"/>',
+    image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/>',
+    wrench: '<path d="M14.7 6.3a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.7 6.3 17 4l3 3-2.3 2.3"/>',
+    doc: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>',
+    arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+    left: '<path d="M19 12H5M11 6l-6 6 6 6"/>',
+    phone: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',
+    shield: '<path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+    layers: '<path d="m12 3 9 5-9 5-9-5 9-5zM3 13l9 5 9-5"/>',
+    compass: '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
+    sliders: '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
+    flask: '<path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/>',
+    refresh: '<path d="M20 11a8 8 0 0 0-14.6-4.5L4 8M4 4v4h4M4 13a8 8 0 0 0 14.6 4.5L20 16M20 20v-4h-4"/>',
+    dollar: '<path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+    shirt: '<path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/>',
+    key: '<circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M15 8l2 2"/>',
+    link: '<path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/>',
+    nav: '<path d="m3 11 18-8-8 18-2-8z"/>',
+    spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>',
+    grid: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+    note: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
+    monitor: '<rect x="2" y="4" width="13" height="10" rx="1.5"/><rect x="17" y="7" width="5" height="10" rx="1"/><path d="M6 18h5M8.5 14v4"/>',
+    expand: '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>',
+    help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5h.01"/>'
+  }
+  const svg = (k, sw = 2) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k] || ''}</svg>`
+  const $ = (s, r = document) => r.querySelector(s)
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)]
+  const pad = n => String(n).padStart(2, '0')
+  const icons = root => $$('i[data-i]', root).forEach(el => el.outerHTML = svg(el.dataset.i))
+
+  const params = new URLSearchParams(location.search)
+  const isPres = params.has('presenter')
+  const viewport = $('#viewport'), stage = $('#stage'), slides = $$('.slide', stage), N = slides.length
+  let cur = -1, timers = []
+
+  // ---------- Conteúdo dinâmico ----------
+  const ACT = {
+    rev: { ico: 'reply', t: 'Google review replies', d: 'Monday, Wednesday and Friday' },
+    gbp: { ico: 'pin', t: 'Google profile update', d: 'Weekly, Thursday in the reference schedule' },
+    post: { ico: 'image', t: 'Social media post', d: 'Tuesday and Thursday' },
+    meta: { ico: 'chart', t: 'Meta Ads monitoring', d: 'Every day' },
+    ads: { ico: 'target', t: 'Google Ads and LSA check', d: 'Monday, Wednesday and Friday' }
+  }
+  const WEEK = [['rev', 'ads', 'meta'], ['post', 'meta'], ['rev', 'ads', 'meta'], ['post', 'gbp', 'meta'], ['rev', 'ads', 'meta'], ['meta'], ['meta']]
+  const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  const DAYS_L = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  const week = $('[data-week]')
+  week.innerHTML = WEEK.map((acts, k) => `<button type="button" class="day" aria-pressed="${k === 0}" data-day="${k}" aria-label="${DAYS_L[k]}"><span class="day__n">${DAYS[k]}</span><span class="day__dots">${acts.map(a => `<span class="dot dot--${a}">${svg(ACT[a].ico, 2.4)}</span>`).join('')}</span></button>`).join('')
+  $('[data-legend]').innerHTML = Object.keys(ACT).map(k => `<span><i class="dot--${k}"></i>${ACT[k].t}</span>`).join('')
+  const renderDay = k => {
+    $$('.day', week).forEach(d => d.setAttribute('aria-pressed', +d.dataset.day === k))
+    const acts = WEEK[k]
+    $('[data-daybox]').innerHTML = `<p class="eyebrow">Reference week</p><h3>${DAYS_L[k]}</h3><ul>${acts.map((a, j) => `<li style="--k:${j}"><span class="dot dot--${a}">${svg(ACT[a].ico, 2.4)}</span><div><b>${ACT[a].t}</b><small>${ACT[a].d}</small></div></li>`).join('')}</ul>`
+  }
+  renderDay(0)
+
+  // Painel administrativo (dados ilustrativos)
+  const LEADS = [
+    { t: 'Roof replacement', c: 'Columbus', src: ['Google Ads', 'g'], st: 'New', j: [['Clicked a Google Ads campaign', 'utm_source=google · utm_campaign=roof-replacement'], ['Visited the roof replacement page', '3 pages viewed'], ['Browsed the project gallery', '2 projects opened'], ['Submitted the inspection form', 'Status: New']] },
+    { t: 'Storm damage', c: 'Dayton', src: ['LSA', 'l'], st: 'Contacted', j: [['Lead received from Local Services Ads', 'Category: roofing'], ['Called the Dayton office', 'Call logged'], ['Follow-up by the sales team', 'Status: Contacted']] },
+    { t: 'Siding estimate', c: 'New Bremen', src: ['Organic', 'o'], st: 'Estimate', j: [['Found Nitro on Google Search', 'utm_source=organic'], ['Read the siding service page', 'FAQ section viewed'], ['Requested an estimate', 'Form submitted'], ['Estimate scheduled', 'Status: Estimate']] },
+    { t: 'Gutter repair', c: 'Columbus', src: ['Meta Ads', 'm'], st: 'New', j: [['Clicked an Instagram ad', 'utm_source=meta · utm_campaign=gutters'], ['Viewed a project detail page', 'CompanyCam project'], ['Submitted the contact form', 'Status: New']] }
+  ]
+  const admBody = $('[data-adm-body]')
+  let leadI = 0
+  const renderAdm = tab => {
+    $$('[data-adm]').forEach(b => b.setAttribute('aria-selected', +b.dataset.adm === tab))
+    if (tab === 0) {
+      const L = LEADS[leadI]
+      admBody.innerHTML = `<div class="adm__split">
+        <div class="card"><p class="lbl">Recent leads</p>
+          <div class="row row--h"><span>Inquiry</span><span>Source</span><span>Status</span></div>
+          ${LEADS.map((l, k) => `<button type="button" class="row${k === leadI ? ' is-on' : ''}" data-lead="${k}"><span><b>${l.t}</b><small>${l.c}</small></span><span class="chip chip--${l.src[1]}">${l.src[0]}</span><span class="chip">${l.st}</span></button>`).join('')}
+        </div>
+        <div class="card"><p class="lbl">Lead history</p><ul class="journey">${L.j.map((s, k) => `<li style="--k:${k}">${s[0]}<small>${s[1]}</small></li>`).join('')}</ul></div>
+      </div>`
+    } else {
+      admBody.innerHTML = `<div class="adm__split">
+        <div class="card"><p class="lbl">Page · Roof replacement</p>
+          <div class="field">Roof Replacement in Ohio</div>
+          <div class="field is-edit">Serving New Bremen, Columbus and Dayton</div>
+          <div class="adm__img"><span>Hero image · replace</span></div>
+        </div>
+        <div class="card" style="display:flex;flex-direction:column;gap:12px"><p class="lbl">Quick actions</p>
+          <span class="mini-btn">${svg('edit', 2.4)}Edit copy</span>
+          <span class="mini-btn mini-btn--g">${svg('image', 2.2)}Swap images</span>
+          <span class="mini-btn mini-btn--g">${svg('camera', 2.2)}Add a project</span>
+          <span class="mini-btn mini-btn--g">${svg('star', 2.2)}Add a review</span>
+          <span class="mini-btn mini-btn--g">${svg('doc', 2.2)}Export leads (CSV)</span>
+        </div>
+      </div>`
+    }
+  }
+  renderAdm(0)
+
+  // ---------- Decoração dos slides ----------
+  icons(document)
+  slides.forEach((s, k) => {
+    const sh = $('.sh', s)
+    if (sh && !$('.brands', sh)) sh.insertAdjacentHTML('beforeend', `<img class="logo" src="assets/${s.classList.contains('d') ? 'nitro-logo-reversed' : 'nitro-logo'}.svg" alt="Nitro Roofing & Construction">`)
+    s.insertAdjacentHTML('beforeend', `<span class="pg">${pad(k + 1)} / ${pad(N)}</span>`)
+    $$('.a', s).forEach((el, j) => el.style.setProperty('--i', j))
+    s.setAttribute('role', 'group')
+    s.setAttribute('aria-roledescription', 'slide')
+    s.setAttribute('aria-label', `${k + 1} of ${N}`)
+    s.dataset.title = ($('.title', s)?.textContent || '').replace(/\s+/g, ' ').trim()
+    s.inert = true
+  })
+
+  // ---------- Escala do palco ----------
+  const host = () => isPres ? $('.pv__cur') : viewport
+  const fit = () => {
+    const h = host()
+    stage.style.setProperty('--s', Math.min(h.clientWidth / 1600, h.clientHeight / 900))
+    if (isPres) fitMini($('.pv__next'))
+    if ($('#ov').classList.contains('is-open')) $$('.mini', $('#ovGrid')).forEach(fitMini)
+  }
+  const fitMini = m => m && m.style.setProperty('--ms', m.clientWidth / 1600)
+  const cloneSlide = (k) => {
+    const c = slides[k].cloneNode(true)
+    c.classList.add('is-on', 'static')
+    c.inert = true
+    c.removeAttribute('aria-label')
+    return c
+  }
+
+  // ---------- Navegação ----------
+  const hooks = {
+    road(s) {
+      const steps = $$('.rs', s)
+      steps.forEach(r => r.classList.remove('is-in'))
+      steps.forEach((r, k) => timers.push(setTimeout(() => r.classList.add('is-in'), 700 + k * 450)))
+    },
+    count(s) {
+      $$('[data-count]', s).forEach(el => {
+        const to = +el.dataset.count, pre = el.dataset.pre || '', suf = el.dataset.suf || ''
+        const t0 = performance.now(), dur = 1300
+        const tick = now => {
+          const p = Math.min(1, (now - t0) / dur), v = Math.round(to * (1 - Math.pow(1 - p, 3)))
+          el.textContent = pre + v.toLocaleString('en-US') + suf
+          if (p < 1 && cur === slides.indexOf(s)) requestAnimationFrame(tick)
+          else el.textContent = pre + to.toLocaleString('en-US') + suf
+        }
+        el.textContent = pre + '0' + suf
+        timers.push(setTimeout(() => requestAnimationFrame(tick), 450))
+      })
+    }
+  }
+  let remote = null
+  function go(i, fromRemote) {
+    i = Math.max(0, Math.min(N - 1, i))
+    if (i === cur) return
+    timers.forEach(clearTimeout); timers = []
+    if (cur >= 0) {
+      const old = slides[cur]
+      old.classList.remove('is-on'); old.inert = true
+      $$('.has-focus', old).forEach(g => g.classList.remove('has-focus'))
+      $$('.is-focus', old).forEach(g => g.classList.remove('is-focus'))
+    }
+    cur = i
+    const s = slides[i]
+    s.classList.add('is-on'); s.inert = false
+    $('#progress').style.transform = `scaleX(${(i + 1) / N})`
+    $('#counter').textContent = `${pad(i + 1)} / ${pad(N)}`
+    $('#cueText').textContent = s.dataset.cue || ''
+    $('#cueNote').textContent = $('.fine', s)?.textContent || ''
+    history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1))
+    const h = s.dataset.enter && hooks[s.dataset.enter]
+    if (h) h(s)
+    if (isPres) updatePresenter()
+    if (!fromRemote) send(i)
+  }
+  const next = () => go(cur + 1), prev = () => go(cur - 1)
+
+  // Sincronia entre a janela principal e a do apresentador
+  const send = i => { try { if (remote && !remote.closed) remote.postMessage({ nitroGo: i }, '*') } catch (e) {} }
+  addEventListener('message', e => { if (e.data && typeof e.data.nitroGo === 'number') { if (!remote && e.source) remote = e.source; go(e.data.nitroGo, true) } })
+  const openPresenter = () => {
+    const url = location.href.split('#')[0].split('?')[0] + '?presenter#' + (cur + 1)
+    remote = open(url, 'nitro-presenter', 'width=1280,height=760')
+  }
+
+  // ---------- Modo apresentador ----------
+  let t0 = Date.now()
+  function buildPresenter() {
+    document.body.classList.add('presenter')
+    const pv = document.createElement('div')
+    pv.className = 'pv'
+    pv.innerHTML = `<div class="pv__cur"></div>
+      <aside class="pv__side">
+        <div class="pv__top"><span class="pv__count"></span><button type="button" class="pv__timer" title="Reset timer">00:00</button></div>
+        <p class="pv__lbl">Next slide</p><div class="mini pv__next"></div><p class="pv__note" data-next-title></p>
+        <p class="pv__lbl">Presenter cue</p><p class="pv__cue"></p>
+        <p class="pv__lbl">Footnote</p><p class="pv__note" data-note></p>
+        <div class="pv__nav"><button type="button" data-act="prev">← Previous</button><button type="button" data-act="next">Next →</button></div>
+      </aside>`
+    document.body.append(pv)
+    $('.pv__cur').append(stage)
+    remote = opener || null
+    $('.pv__timer').addEventListener('click', () => { t0 = Date.now() })
+    setInterval(() => { const s = Math.floor((Date.now() - t0) / 1000); $('.pv__timer').textContent = `${pad(Math.floor(s / 60))}:${pad(s % 60)}` }, 1000)
+    document.title = 'Presenter · ' + document.title
+  }
+  function updatePresenter() {
+    const s = slides[cur], nx = $('.pv__next')
+    $('.pv__count').textContent = `${pad(cur + 1)} / ${pad(N)}`
+    $('.pv__cue').textContent = s.dataset.cue || ''
+    $('[data-note]').textContent = $('.fine', s)?.textContent || '—'
+    nx.innerHTML = ''
+    if (cur < N - 1) { nx.append(cloneSlide(cur + 1)); $('[data-next-title]').textContent = slides[cur + 1].dataset.title }
+    else $('[data-next-title]').textContent = 'End of presentation'
+    fitMini(nx)
+  }
+
+  // ---------- Visão geral ----------
+  const ov = $('#ov'), ovGrid = $('#ovGrid')
+  const toggleGrid = force => {
+    const open = force ?? !ov.classList.contains('is-open')
+    if (open && !ovGrid.children.length) {
+      slides.forEach((s, k) => {
+        const b = document.createElement('button')
+        b.type = 'button'; b.className = 'ov__item'; b.dataset.goto = k
+        b.innerHTML = `<div class="mini"></div><p><b>${pad(k + 1)}</b>${s.dataset.title}</p>`
+        b.firstChild.append(cloneSlide(k))
+        ovGrid.append(b)
+      })
+    }
+    ov.classList.toggle('is-open', open)
+    if (open) {
+      $$('.ov__item', ovGrid).forEach((b, k) => b.classList.toggle('is-cur', k === cur))
+      requestAnimationFrame(() => { $$('.mini', ovGrid).forEach(fitMini); $('.ov__item.is-cur', ovGrid)?.scrollIntoView({ block: 'center' }) })
+    }
+  }
+  const toggleNotes = force => {
+    const on = force ?? !$('#cue').classList.contains('is-on')
+    $('#cue').classList.toggle('is-on', on)
+    $('[data-act="notes"]').setAttribute('aria-pressed', on)
+    document.documentElement.style.setProperty('--cueh', on ? $('#cue').offsetHeight + 'px' : '0px')
+    fit()
+  }
+  const toggleFull = () => { document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.() }
+  const toggleHelp = force => $('#help').classList.toggle('is-open', force)
+
+  // ---------- Eventos ----------
+  const ACTS = { prev, next, grid: () => toggleGrid(), notes: () => toggleNotes(), pres: openPresenter, full: toggleFull, help: () => toggleHelp() }
+  document.addEventListener('click', e => {
+    const t = e.target
+    const act = t.closest('[data-act]'); if (act) return ACTS[act.dataset.act]?.()
+    const gt = t.closest('[data-goto]'); if (gt) { toggleGrid(false); return go(+gt.dataset.goto) }
+    if (t.closest('.help') && !t.closest('.help__box')) return toggleHelp(false)
+    const g = t.closest('[data-go]'); if (g) return go(+g.dataset.go - 1)
+    const shot = t.closest('[data-shot]')
+    if (shot) {
+      const box = shot.closest('.shots'), k = +shot.dataset.shot
+      $$('[data-shot]', box).forEach(b => b.setAttribute('aria-pressed', b === shot))
+      $$('.browser__view img', box).forEach((im, j) => im.classList.toggle('is-on', j === k))
+      $('[data-url]', box).textContent = ['nitroroofing.com', 'nitroroofing.com/projects', 'nitroroofing.com/roof-replacement'][k]
+      return
+    }
+    const day = t.closest('[data-day]'); if (day) return renderDay(+day.dataset.day)
+    const lead = t.closest('[data-lead]'); if (lead) { leadI = +lead.dataset.lead; return renderAdm(0) }
+    const adm = t.closest('[data-adm]'); if (adm) return renderAdm(+adm.dataset.adm)
+    const off = t.closest('[data-office]')
+    if (off) {
+      const box = off.closest('.gbp')
+      $$('[data-office]', box).forEach(b => b.setAttribute('aria-pressed', b === off))
+      $('[data-city]', box).textContent = off.dataset.office
+      const map = $('[data-map]', box), pin = $('.pin', map)
+      map.style.backgroundPosition = { 'New Bremen': '0 0, 0 0, 0 0', Columbus: '35px 20px, 35px 20px, 0 0', Dayton: '15px 45px, 15px 45px, 0 0' }[off.dataset.office]
+      pin.replaceWith(pin.cloneNode(true))
+      return
+    }
+    const stg = t.closest('[data-stage]')
+    if (stg) {
+      const box = stg.closest('.slide'), k = +stg.dataset.stage
+      $$('[data-stage]', box).forEach((b, j) => { b.classList.toggle('is-done', j < k); b.classList.toggle('is-cur', j === k) })
+      $('[data-track]', box).style.setProperty('--w', `${(k + 1) * 25}%`)
+      $('[data-track-lbl]', box).textContent = `Stage ${k + 1} of 4`
+      return
+    }
+    const chk = t.closest('[data-check]')
+    if (chk) {
+      chk.classList.toggle('is-ok')
+      const box = chk.closest('.slide'), n = $$('[data-check].is-ok', box).length
+      $('[data-chk-n]', box).textContent = `${n} of 4`
+      $('[data-chk-bar]', box).style.width = `${n * 25}%`
+      return
+    }
+    const rs = t.closest('.rs'); if (rs) return rs.classList.toggle('is-in')
+    const card = t.closest('.pt, .sx__card')
+    if (card && card.parentElement) {
+      const grid = card.parentElement, on = !card.classList.contains('is-focus')
+      $$(':scope > .is-focus', grid).forEach(x => x.classList.remove('is-focus'))
+      card.classList.toggle('is-focus', on)
+      grid.classList.toggle('has-focus', on)
+    }
+  })
+
+  let typed = ''
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey || e.metaKey || e.altKey) return
+    const k = e.key
+    if ($('#help').classList.contains('is-open') && (k === 'Escape' || k === '?')) return toggleHelp(false)
+    if (ov.classList.contains('is-open')) { if (k === 'Escape' || k === 'g' || k === 'G' || k === 'o' || k === 'O') toggleGrid(false); return }
+    if (/^\d$/.test(k)) { typed = (typed + k).slice(-2); return }
+    if (k === 'Enter' && typed) { go(+typed - 1); typed = ''; return }
+    typed = ''
+    if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(k)) { e.preventDefault(); next() }
+    else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) { e.preventDefault(); prev() }
+    else if (k === 'Home') go(0)
+    else if (k === 'End') go(N - 1)
+    else if (k === 'g' || k === 'G' || k === 'o' || k === 'O') toggleGrid(true)
+    else if ((k === 'n' || k === 'N') && !isPres) toggleNotes()
+    else if ((k === 'p' || k === 'P') && !isPres) openPresenter()
+    else if (k === 'f' || k === 'F') toggleFull()
+    else if (k === '?' || k === 'h' || k === 'H') toggleHelp(true)
+  })
+
+  // Toque: deslizar para os lados
+  let tx = null
+  addEventListener('touchstart', e => { tx = e.touches[0].clientX }, { passive: true })
+  addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) dx < 0 ? next() : prev(); tx = null }, { passive: true })
+
+  // Controles aparecem ao mover o mouse e somem sozinhos
+  const ctrl = $('#ctrl')
+  let hideT
+  const showCtrl = () => { ctrl.classList.add('show'); clearTimeout(hideT); hideT = setTimeout(() => ctrl.classList.remove('show'), 2400) }
+  addEventListener('mousemove', showCtrl)
+  addEventListener('touchstart', showCtrl, { passive: true })
+
+  addEventListener('resize', fit)
+  addEventListener('hashchange', () => { const n = parseInt(location.hash.slice(1), 10); if (n) go(n - 1) })
+
+  if (isPres) buildPresenter()
+  fit()
+  go((parseInt(location.hash.slice(1), 10) || 1) - 1, true)
+  if (!isPres) showCtrl()
+})()
+</script>
+</body>
+</html>
