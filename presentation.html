@@ -373,13 +373,8 @@ button.tile:hover .tile__go { background: var(--red); border-color: var(--red); 
 .track__lbl { display: flex; justify-content: space-between; margin-top: 10px; font-size: 15px; font-weight: 700; color: var(--muted); }
 
 /* ---------- Marca e avaliações ---------- */
-.trio { display: grid; grid-template-columns: 1fr .82fr 1fr; gap: 24px; align-items: stretch; }
+.trio { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
 .trio .pt { flex-direction: column; gap: 16px; padding: 32px 30px; }
-.fee { justify-content: center; text-align: center; align-items: center; background: var(--dark) !important; border-color: var(--dark) !important; }
-.fee .big { font-size: 112px; font-weight: 800; line-height: .9; letter-spacing: -.04em; color: #fff; }
-.fee h3 { color: #fff !important; }
-.fee p { color: var(--d-muted) !important; }
-.fee::before { width: 100% !important; }
 
 /* ---------- Semana ---------- */
 .rhythm { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: start; }
@@ -410,7 +405,7 @@ button.tile:hover .tile__go { background: var(--red); border-color: var(--red); 
 .monthly li svg { width: 20px; height: 20px; color: var(--red-soft); flex: none; }
 
 /* ---------- Investimento ---------- */
-.prices { display: grid; grid-template-columns: 1fr 1.15fr .85fr; gap: 24px; }
+.prices { display: grid; grid-template-columns: 1fr 1.15fr; gap: 24px; }
 .price { position: relative; background: rgba(255, 255, 255, .04); border: 1px solid var(--d-line); border-radius: 18px; padding: 34px 32px; overflow: hidden; }
 .price::before { content: ''; position: absolute; left: 0; top: 0; width: 38%; height: 5px; background: var(--red); }
 .price--main { background: linear-gradient(140deg, var(--red) 0%, #e8262e 60%, #b8161d 100%); border-color: transparent; box-shadow: 0 24px 60px rgba(220, 28, 36, .28); }
@@ -748,7 +743,7 @@ body.presenter .viewport, body.presenter .ctrl, body.presenter .cue { display: n
     </section>
 
     <!-- 11 · FASE 2 -->
-    <section class="slide d" data-cue="The monthly fee brings the management routine together. Merchandise and print orders carry a separate fee.">
+    <section class="slide d" data-cue="The monthly fee brings the management routine together, including merchandise and print coordination.">
       <header class="sh a"><p class="eyebrow">Phase 2 · Monthly management</p></header>
       <h2 class="title a">Eight workstreams keep <span class="hl">the operation moving</span></h2>
       <p class="lead a">Recurring management follows foundation preparation, according to the agreed implementation plan.</p>
@@ -891,12 +886,11 @@ body.presenter .viewport, body.presenter .ctrl, body.presenter .cue { display: n
       <p class="lead a">Two additional workstreams support the digital channels and the company’s reputation.</p>
       <div class="body">
         <div class="trio pts">
-          <button type="button" class="pt a"><span class="pt__ico"><i data-i="shirt"></i></span><span><h3><small>Service 12</small>Merchandise and print</h3><p>Design hats, shirts, branded merchandise, yard signs and business cards aligned with Nitro’s brand.</p><span class="tags"><span class="tag">Hats</span><span class="tag">Shirts</span><span class="tag">Yard signs</span><span class="tag">Business cards</span></span></span></button>
-          <button type="button" class="pt fee a"><span class="big">20%</span><span><h3>Ordering and coordination</h3><p>Coordinate suppliers and delivery. A 20% fee on the final order value applies outside the monthly fee.</p></span></button>
+          <button type="button" class="pt a"><span class="pt__ico"><i data-i="shirt"></i></span><span><h3><small>Service 12</small>Merchandise and print</h3><p>Design hats, shirts, branded merchandise, yard signs and business cards aligned with Nitro’s brand, with supplier ordering and delivery coordination.</p><span class="tags"><span class="tag">Hats</span><span class="tag">Shirts</span><span class="tag">Yard signs</span><span class="tag">Business cards</span></span></span></button>
           <button type="button" class="pt a"><span class="pt__ico"><i data-i="star"></i></span><span><h3><small>Service 13</small>Nextdoor and Yelp</h3><p>Regularly add recent project photos and reply to every new review on both platforms.</p><span class="tags"><span class="tag"><i data-i="camera"></i>Project photos</span><span class="tag"><i data-i="reply"></i>Every review answered</span></span></span></button>
         </div>
       </div>
-      <p class="fine">Confirm production, shipping, taxes, order terms and the fee calculation basis before placing an order.</p>
+      <p class="fine">Confirm production, shipping, taxes and order terms before placing an order.</p>
     </section>
 
     <!-- 19 · ROTINA -->
@@ -952,11 +946,10 @@ body.presenter .viewport, body.presenter .ctrl, body.presenter .cue { display: n
         <div class="prices">
           <div class="price a"><small>Phase 1 · Initial project</small><b data-count="7800" data-pre="$">$7,800</b><h3>Five foundation services</h3><p>Including the new website and control panels.</p></div>
           <div class="price price--main a"><small>Phase 2 · Ongoing management</small><b><span data-count="5800" data-pre="$">$5,800</span><sub>/ month</sub></b><h3>Eight management workstreams</h3><p>The source specifies a flat fee with no fee on media investment.</p></div>
-          <div class="price a"><small>Merchandise and print</small><b data-count="20" data-suf="%">20%</b><h3>Fee per order</h3><p>On the final order value, charged separately from the monthly fee.</p></div>
         </div>
         <div class="strip a"><b>To confirm</b><span class="tags"><span class="tag">Ad spend</span><span class="tag">Tools and licenses</span><span class="tag">External costs</span><span class="tag">Payment terms</span><span class="tag">Monthly start date</span><span class="tag">Contract duration</span></span></div>
       </div>
-      <p class="fine">The source counts merchandise among the eight monthly workstreams but specifies an additional 20% fee per order.</p>
+      <p class="fine">Merchandise and print coordination is one of the eight monthly workstreams, with no additional fee per order.</p>
     </section>
 
     <!-- 22 · DECISÕES -->

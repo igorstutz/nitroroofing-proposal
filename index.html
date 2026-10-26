@@ -445,7 +445,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .bgroup h3 .bprice small { font-size: .74rem; color: var(--muted); font-weight: 700; margin-left: 3px; }
 .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .opt { position: relative; display: flex; gap: 12px; align-items: center; padding: 14px 16px; background: #fff; border: 1.5px solid var(--line); border-radius: var(--radius-lg); cursor: default; transition: border-color .2s, box-shadow .2s, background .2s; font-weight: 600; color: var(--ink); font-size: .94rem; line-height: 1.35; }
-.opt__fee { display: block; font-size: .78rem; font-weight: 700; color: var(--red-700); margin-top: 2px; }
 .opt input { position: absolute; opacity: 0; pointer-events: none; }
 .opt__box { width: 22px; height: 22px; border-radius: 6px; border: 2px solid #cfd3da; flex: none; display: grid; place-items: center; transition: background .2s, border-color .2s; }
 .opt__box svg { width: 14px; height: 14px; color: #fff; opacity: 0; transform: scale(.5); transition: opacity .2s, transform .2s; }
@@ -464,7 +463,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .price span small { display: block; font-size: .74rem; color: #8b93a3; font-weight: 600; margin-top: 2px; }
 .price b { font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -.02em; white-space: nowrap; line-height: 1; text-align: right; }
 .price b small { font-size: .74rem; font-weight: 700; color: #aab1be; letter-spacing: 0; margin-left: 2px; }
-.price--alt b { font-size: 1.15rem; }
 .sum__list { display: grid; gap: 7px; margin-bottom: 22px; max-height: 300px; overflow: auto; }
 .sum__list li { display: flex; gap: 9px; font-size: .88rem; color: #e5e8ee; line-height: 1.4; animation: panelIn .3s ease; }
 .sum__list li svg { width: 16px; height: 16px; color: var(--red-soft); flex: none; margin-top: 2px; }
@@ -975,7 +973,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
         ['Connection to QuickBooks for marketing expense tracking'],
         ['KPI dashboard:', ['Total leads by location', 'Total leads by source (all sources, with data provided by Nitro)', 'Non-converted leads from Google and other sources (leads that were never entered into JobNimbus)', 'Total disputed leads', 'Cost per lead by source', 'Average cost per lead (blended average)', 'Cost per acquisition (total and per lead)', 'NSPL (net sales per lead)', 'Lead conversion (leads that get estimated)', 'Marketing budget vs. actual spend (by source and location)']],
         ['Ability to set marketing spend by lead source and/or location in the dashboard']] } } },
-    { ico: 'image', fee: '20% of the final order value', en: { t: 'Merch & Print Materials', d: 'Hats, shirts, merch, yard signs and business cards designed, ordered and coordinated for Nitro.', c: [['edit', 'Design'], ['inbox', 'Ordering & coordination'], ['doc', '20% of final order']], i: ['Hats, shirts and branded merch', 'Yard signs and business cards', 'Design of every piece, aligned with Nitro\'s brand', 'Ordering with suppliers and coordination through delivery', 'Billed at 20% of the final order value, outside the monthly flat fee'] } },
+    { ico: 'image', en: { t: 'Merch & Print Materials', d: 'Hats, shirts, merch, yard signs and business cards designed, ordered and coordinated for Nitro.', c: [['edit', 'Design'], ['inbox', 'Ordering & coordination'], ['doc', 'Included in the monthly fee']], i: ['Hats, shirts and branded merch', 'Yard signs and business cards', 'Design of every piece, aligned with Nitro\'s brand', 'Ordering with suppliers and coordination through delivery', 'Included in the monthly flat fee'] } },
     { ico: 'star', en: { t: 'Nextdoor & Yelp Management', d: 'Recurring care of Nitro\'s Nextdoor and Yelp pages.', c: [['camera', 'Photo updates'], ['reply', 'Review replies']], i: ['Recurring photo updates with recent projects', 'Replies to every new review on both platforms'] } }
   ]
   const PRICE = { p1: '$9,000', p2: '$5,800' }
@@ -1018,7 +1016,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   const SHOT_URLS = ['nitroroofing.com', 'nitroroofing.com/projects/', 'nitroroofing.com/services/residential/roof-replacement/']
 
   const UI = {
-    en: { built: 'Built · ready to launch', plan: 'Delivered in Phase 1', incl: 'What\'s included', out: 'Outcome', live: 'Open the live preview', details: 'Details', p1: 'Phase 1 · Initial project', p2: 'Phase 2 · Monthly management', p1Price: 'Initial project', p1Note: 'Phase 1 · first month, one-time', p2Price: 'Monthly payment', p2Note: 'Flat fee (no investment fee)', mo: '/mo', feeLabel: 'Merch & print materials', copied: 'Plan summary copied', week: 'This day', tasks: 'tasks', planTitle: 'Nitro Roofing — Digital Growth Proposal' },
+    en: { built: 'Built · ready to launch', plan: 'Delivered in Phase 1', incl: 'What\'s included', out: 'Outcome', live: 'Open the live preview', details: 'Details', p1: 'Phase 1 · Initial project', p2: 'Phase 2 · Monthly management', p1Price: 'Initial project', p1Note: 'Phase 1 · first month, one-time', p2Price: 'Monthly payment', p2Note: 'Flat fee (no investment fee)', mo: '/mo', copied: 'Plan summary copied', week: 'This day', tasks: 'tasks', planTitle: 'Nitro Roofing — Digital Growth Proposal' },
     pt: { built: 'Pronto · aguardando lançamento', plan: 'Entregue na Fase 1', incl: 'O que está incluído', out: 'Resultado', live: 'Abrir o preview ao vivo', details: 'Detalhes', of: 'de', p1: 'Fase 1 · Base', p2: 'Fase 2 · Mensal', all: 'Marcar todos', none: 'Limpar', copied: 'Seleção copiada', week: 'Neste dia', tasks: 'tarefas', plan: 'Nitro Roofing — serviços selecionados' }
   }
 
@@ -1191,16 +1189,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
   }
 
   // ---------- Investimento (todos os serviços incluídos, sem desmarcar) ----------
-  const FEE = P2.find(p => p.fee)
   function renderPlan() {
     const u = UI[L]
-    const opt = p => `<label class="opt"><input type="checkbox" checked disabled><span class="opt__box">${svg('check', 3)}</span><span>${p[L].t}${p.fee ? `<small class="opt__fee">${p.fee}</small>` : ''}</span></label>`
+    const opt = p => `<label class="opt"><input type="checkbox" checked disabled><span class="opt__box">${svg('check', 3)}</span><span>${p[L].t}</span></label>`
     const grp = (list, title, price) => `<div class="bgroup"><h3>${title}<span class="bprice">${price}</span></h3><div class="opts">${list.map(opt).join('')}</div></div>`
     $('#groups').innerHTML = grp(P1, u.p1, `${PRICE.p1}<small>first month</small>`) + grp(P2, u.p2, `${PRICE.p2}<small>${u.mo}</small>`)
     $('#sumN').textContent = P1.length + P2.length
     $('#prices').innerHTML = `<div class="price"><span>${u.p1Price}<small>${u.p1Note}</small></span><b>${PRICE.p1}</b></div>
-      <div class="price"><span>${u.p2Price}<small>${u.p2Note}</small></span><b>${PRICE.p2}<small>${u.mo}</small></b></div>
-      <div class="price price--alt"><span>${u.feeLabel}<small>Design, ordering &amp; coordination</small></span><b>20%<small>of order</small></b></div>`
+      <div class="price"><span>${u.p2Price}<small>${u.p2Note}</small></span><b>${PRICE.p2}<small>${u.mo}</small></b></div>`
     $('#sumDates').innerHTML = STARTS.map(([d, t]) => `<li>${svg('cal')}<span><b>${d}</b> · ${t}</span></li>`).join('')
     const part = (list, title) => `<li class="sep">${title}</li>` + list.map(p => `<li>${svg('check', 2.6)}<span>${p[L].t}</span></li>`).join('')
     $('#sumList').innerHTML = part(P1, u.p1) + part(P2, u.p2)
@@ -1210,10 +1206,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
     const lines = [u.planTitle, '']
     ;[[P1, `${u.p1} — ${PRICE.p1} (first month, one-time)`], [P2, `${u.p2} — ${PRICE.p2}${u.mo} · ${u.p2Note}`]].forEach(([list, title]) => {
       lines.push(title)
-      list.forEach(p => lines.push('• ' + p[L].t + (p.fee ? ` (${p.fee})` : '')))
+      list.forEach(p => lines.push('• ' + p[L].t))
       lines.push('')
     })
-    if (FEE) lines.push(`${u.feeLabel}: ${FEE.fee}, billed separately from the monthly fee.`)
     lines.push('', ...STARTS.map(([d, t]) => `${d}: ${t}`))
     const txt = lines.join('\n').trim()
     try { await navigator.clipboard.writeText(txt) } catch (e) {
